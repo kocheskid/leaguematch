@@ -1,0 +1,138 @@
+.layer0{
+    background-image: url("../images/Layer 0.png");
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 4000px;
+    z-index: 1;
+}
+
+.layer1{
+    background-image: url("../images/Layer 1.png");
+    position: absolute;
+    /*left: -100px;*/
+    top: 0px;
+    width: 100%;
+    height: 2000px;
+    z-index: 2;
+}
+
+.layer2{
+    background-image: url("../images/Layer 2.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    /*top: -49px;*/
+    width: 100%;
+    height: 940px;
+    z-index: 3;
+}
+
+.layer4{
+    background-image: url("../images/Layer 4.png");
+    box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.21);
+    opacity: 0.851;
+    position: absolute;
+    /*left: -2px;*/
+    /*top: -3px;*/
+    width: 100%;
+    height: 53px;
+    z-index: 13;
+}
+
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('../fonts/Myriad Pro Regular.ttf ') format("truetype");
+}
+
+.header-first-text{
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    margin-left:15%;
+    /*left: 320.099px;*/
+    top: 20px;
+    z-index: 25;
+}
+
+.header-first-text a{
+    font-family: MyriadPro-Regular;
+    color:  #7a7b87;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.15px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.header-first-text a:hover{
+    text-decoration: none;
+}
+
+.label-header{
+    font-family: MyriadPro-Regular;
+    color:  #7a7b87;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.15px;
+    text-align: left;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.layer5{
+    background-image: url("../images/Layer 5.png");
+    opacity: 1;
+    position: absolute;
+    left: 603px;
+    top: 0px;
+    width: 132px;
+    height: 56px;
+    z-index: 21;
+}
+
+.quickplay-label{
+    font-size: 14px;
+    font-family: MyriadPro-Regular;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    top: 21.85px;
+    left:32px;
+    z-index: 50;
+}
+
+.quickplay-label:hover{
+    text-decoration: none;
+    color:black;
+}
+
+.header-text-right{
+    left: 48%;
+    top: 18px;
+    z-index: 26;
+    position: absolute;
+}
+
+.header-text-right a{
+    font-family: MyriadPro-Regular;
+    color:  #7a7b87;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.15px;
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 1.2;
+
+}
+
+.header-text-right a:hover{
+    text-decoration:none;
+}
