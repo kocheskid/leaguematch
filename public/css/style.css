@@ -119,6 +119,8 @@
     top: 18px;
     z-index: 26;
     position: absolute;
+    position: absolute;
+    left: 758.285px;
 }
 
 .header-text-right a{
@@ -135,4 +137,415 @@
 
 .header-text-right a:hover{
     text-decoration:none;
+}
+
+.sidebar-header{
+    background-color:  #2b2b30;
+    width: 100%;
+    height: 53px;
+    box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.21);
+}
+
+.logo-image{
+    position: absolute;
+    left: 60px;
+    top: 14px;
+    width: 163px;
+    height: 26px;
+    z-index: 28;
+}
+
+.sidebar-body{
+    background-color:  #2b2b30;
+    position: absolute;
+    /*left: -10px;*/
+    top: 53px;
+    width: 100%;
+    height: 3327px;
+    z-index: 12;
+}
+
+.button-start-game{
+    background-image: url("../images/button-start-game.png");
+    position: absolute;
+    left: 60px;
+    top: 20px;
+    width: 171px;
+    height: 39px;
+    z-index: 30;
+}
+
+.start-game-label{
+    font-family: MyriadPro-Regular;
+    color:  #d2ecf8;
+    font-size: 14px;/* Approximation due to font substitution */
+    font-weight: 500;
+    text-align: left;
+    text-shadow: 0px 1px 1px rgba(43, 59, 72, 0.75);
+    text-transform: uppercase;
+    line-height: 1.2;
+    position: absolute;
+    left: 46.134px;
+    top:12px;
+    z-index: 31;
+}
+.start-game-label:hover{
+    cursor: pointer;
+    color:#8eb9ff;
+}
+
+.sidebar-leader-box{
+    background-color: rgb(28, 48, 58);
+    position: absolute;
+    /*left: -15px;*/
+    top: 75px;
+    width: 100%;
+    height: 127px;
+    z-index: 17;
+}
+
+.sbox{
+    background-color: rgb(34, 34, 38);
+    position: absolute;
+    /*left: -15px;*/
+    top: 91px;
+    width: 100%;
+    height: 36px;
+    z-index: 18;
+}
+
+.leader-label{
+    font-size: 14px;
+    font-family: MyriadPro-Regular;
+    color: rgb(210, 236, 248);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 88px;
+    top: 20px;
+    z-index: 32;
+}
+
+.leader-label-small{
+    font-size: 11px;
+    font-family: MyriadPro-Regular;
+    color: rgb(210, 236, 248);
+    line-height: 1.2;
+    text-align: center;
+    position: absolute;
+    left: 68px;
+    top: 44px;
+    width: 147px;
+    height: 36px;
+    z-index: 33;
+}
+
+.gear-icon{
+    position: absolute;
+    left: 87px;
+    top: 11px;
+    width: 14px;
+    height: 14px;
+    z-index: 20;
+
+}
+
+.sbox-settings{
+    font-size: 10px;
+    font-family: MyriadPro-Regular;
+    color: rgb(254, 254, 254);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 110px;
+    top: 12.5px;
+    z-index: 19;
+}
+
+.sidebar-friends{
+    font-size: 14px;
+    font-family: MyriadPro-Regular;
+    color: rgb(210, 236, 248);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 12.937px;
+    top: 166.6px;
+    z-index: 34;
+    font-weight: 500;
+}
+
+.scrollbar
+{
+    top:195px;
+    position:absolute;
+    right:0;
+    height: 300px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.force-overflow
+{
+    min-height: 450px;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#style-1::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: rgb(29, 117, 155);
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgb(68, 68, 74);
+    background-color: #555;
+}
+
+.friend-wrapper{
+    margin-left:13px;
+    margin-top:25px;
+}
+
+.img-friend{
+    border-radius: 50%;
+    background-color: rgb(42, 138, 234);
+    /*position: absolute;*/
+    /*left: 15px;*/
+    /*top: 10px;*/
+    width: 35px;
+    height: 35px;
+    z-index: 43;
+    margin-top:-20px;
+}
+
+.friend-name{
+    font-size: 13px;
+    font-family: MyriadPro-Regular;
+    color: rgb(210, 236, 248);
+    line-height: 1.2;
+    text-align: left;
+    /*position: absolute;*/
+    /*left: 62.668px;*/
+    /*top: 14.2px;*/
+    z-index: 45;
+    font-weight: 500;
+    margin-bottom:0px;
+}
+
+.friend-game-playing{
+    font-size: 11px;
+    font-family: MyriadPro-Regular;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: left;
+    /*position: absolute;*/
+    /*left: 61.937px;*/
+    /*top: 30.756px;*/
+    z-index: 46;
+    font-weight: 500;
+}
+
+.text-friend-cont{
+    display:inline-block;
+    margin-left:10px;
+}
+
+.horiz-line{
+    background-color: rgb(68, 68, 74);
+    position: absolute;
+    left: 19px;
+    top: 520px;
+    width: 274px;
+    height: 2px;
+    z-index: 38;
+}
+
+.score-table-pro{
+    font-size: 14px;
+    font-family: MyriadPro-Regular;
+    color: rgb(210, 236, 248);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 12.134px;
+    top: 553.6px;
+    z-index: 35;
+    font-weight: 500;
+}
+
+.score-pro-container{
+    top:577px;
+    position:absolute;
+    left:12px;
+}
+
+.score-pro{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(71, 71, 76);
+    border-radius: 3px;
+    background-color: rgb(51, 51, 56);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.18);
+    /*position: absolute;*/
+    left: 12px;
+    margin-top: 10px;
+    width: 216px;
+    height: 59px;
+    z-index: 101;
+
+}
+
+.score-pro-date{
+    font-size: 9px;
+    font-family: MyriadPro-Regular;
+    color: rgb(193, 193, 195);
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 6.937px;
+    top: 3px;
+    z-index: 185;
+}
+
+.box-rectangle{
+    background-image: url("../images/rectangle.png");
+    position: absolute;
+    /*left: 12px;*/
+    /*top: 704px;*/
+    width: 88px;
+    height: 58px;
+    z-index: 105;
+}
+
+.box-vs{
+    font-family: MyriadPro-Regular;
+    color:  #404044;
+    font-size: 70.58px;/* Approximation due to font substitution */
+    font-weight: 400;
+    text-align: left;
+    transform: scaleX(1.0264);/* width and height properties ommitted due to transform */
+}
+
+.img-player-1{
+    position: absolute;
+    left: 6px;
+    top: 22px;
+    width: 24px;
+    height: 24px;
+    z-index: 178;
+}
+
+.img-player-2{
+    position: absolute;
+    left: 181px;
+    top: 22px;
+    width: 24px;
+    height: 24px;
+    z-index: 178;
+}
+
+.player-1-name{
+    font-size: 12px;
+    font-family: MyriadPro-Regular;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 38px;
+    top: 22px;
+    font-weight: 400;
+    z-index: 179;
+}
+
+.player-2-name{
+    font-size: 12px;
+    font-family: MyriadPro-Regular;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 138px;
+    top: 22px;
+    font-weight: 400;
+    z-index: 179;
+}
+
+.player-1-level{
+    font-size: 9px;
+    font-family: MyriadPro-Regular;
+    color: rgb(136, 136, 142);
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 40px;
+    top: 37px;
+    z-index: 183;
+}
+
+.player-2-level{
+    font-size: 9px;
+    font-family: MyriadPro-Regular;
+    color: rgb(136, 136, 142);
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 138px;
+    top: 37px;
+    z-index: 183;
+}
+
+.box-victory{
+    border-radius: 3px;
+    background-color: rgb(27, 172, 235);
+    position: absolute;
+    left: 140px;
+    top: 3px;
+    width: 65px;
+    height: 14px;
+    z-index: 140;
+}
+
+.box-defeat{
+    border-radius: 3px;
+    background-color: rgb(191, 43, 8);
+    position: absolute;
+    left: 140px;
+    top: 3px;
+    width: 65px;
+    height: 14px;
+    z-index: 140;
+}
+
+.box-defeat p{
+    font-size: 9px;
+    font-family: MyriadPro-Regular;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    /*text-align: left;*/
+    position: absolute;
+    left: 19px;
+    top: 2px;
+    z-index: 104;
+}
+
+.box-victory p{
+    font-size: 9px;
+    font-family: MyriadPro-Regular;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    /*text-align: left;*/
+    position: absolute;
+    left: 19px;
+    top: 2px;
+    z-index: 104;
 }

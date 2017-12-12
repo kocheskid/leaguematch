@@ -27,7 +27,7 @@
 
         <div class="row" style="margin-left:0px;margin-right:0px;">
 
-            <div class="col-sm-2">
+            <div class="col-sm-2" style="padding-left:0px;padding-right:0px;">
                 @include('partials/sidebar')
             </div>
 
