@@ -161,7 +161,7 @@
     /*left: -10px;*/
     top: 53px;
     width: 100%;
-    height: 3327px;
+    height: 1947px;
     z-index: 12;
 }
 
@@ -281,7 +281,7 @@
 .scrollbar
 {
     top:195px;
-    position:absolute;
+    position:relative;
     right:0;
     height: 300px;
     width: 100%;
@@ -384,7 +384,7 @@
 }
 
 .score-pro-container{
-    top:577px;
+    /*top:577px;*/
     position:absolute;
     left:12px;
 }
@@ -548,4 +548,222 @@
     left: 19px;
     top: 2px;
     z-index: 104;
+}
+
+.score-table-wrap{
+    width:100%;
+    position:relative;
+    top:276px;
+    height:290px;
+}
+
+.feat-news{
+    font-size: 14px;
+    font-family: MyriadPro-Regular;
+    color: rgb(210, 236, 248);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 12.937px;
+    top: 1000.6px;
+    z-index: 36;
+    font-weight: 400;
+}
+
+.feat-news-wrap{
+    position: absolute;
+    left: -15px;
+    top: 1033px;
+}
+
+.news-img{
+    margin-left:24px;
+    width: 35px;
+    height: 35px;
+    z-index: 68;
+}
+
+.news-text{
+    font-size: 11px;
+    font-family: MyriadPro-Regular;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: left;
+    /*position: absolute;*/
+    left: 51.982px;
+    /*top: 1039.756px;*/
+    z-index: 69;
+    font-weight: 400;
+    margin-left:5px;
+}
+
+.news-dots{
+    font-size: 14px;
+    font-family: MyriadPro-Regular;
+    color: rgb(68, 68, 74);
+    line-height: 1.2;
+    text-align: left;
+    /*position: absolute;*/
+    /*left: 14.937px;*/
+    /*top: 1073.6px;*/
+    z-index: 42;
+    margin-left:46px;
+}
+
+.more-news{
+    background-color: rgb(50, 50, 50);
+    position: absolute;
+    /*left: 15px;*/
+    /*top: 1280px;*/
+    width: 88px;
+    height: 23px;
+    z-index: 82;
+    margin-left:24px;
+}
+
+.more-news-lbl{
+    font-size: 11px;
+    font-family: MyriadPro-Regular;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: left;
+    /*position: absolute;*/
+    /*left: 27.844px;*/
+    /*top: 1285.4px;*/
+    z-index: 83;
+    margin-left:18px;
+}
+
+.more-news-lbl:hover{
+    cursor: pointer;
+    color:#8eb9ff;
+}
+
+.media-text{
+    font-size: 14px;
+    font-family: MyriadPro-Regular;
+    color: rgb(210, 236, 248);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 12.844px;
+    top: 1325.6px;
+    z-index: 37;
+    font-weight: 400;
+}
+
+.media-wrap{
+    position: absolute;
+    left: 6px;
+    top: 1344px;
+    width:100%;
+    text-align:center;
+}
+
+.media-img{
+    width: 169px;
+    height: 80px;
+    z-index: 144;
+}
+
+.media-m{
+    margin-top:15px;
+}
+
+.media-lbl{
+    font-size: 12px;
+    font-family: MyriadPro-Regular;
+    color: rgb(141, 141, 150);
+    line-height: 1.2;
+    /*text-align: left;*/
+    /*position: absolute;*/
+    /*left: 12.937px;*/
+    /*top: 1486.792px;*/
+    z-index: 99;
+    display:block;
+}
+
+.more-media{
+    background-color: rgb(50, 50, 50);
+    position: absolute;
+    left: 15px;
+    /*top: 1665px;*/
+    width: 88px;
+    height: 23px;
+    z-index: 84;
+    margin-top:20px;
+}
+
+.more-media-lbl{
+    font-size: 11px;
+    font-family: MyriadPro-Regular;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    /*text-align: left;*/
+    /*position: absolute;*/
+    /*left: 25.844px;*/
+    /*top: 1670.4px;*/
+    z-index: 85;
+}
+
+.more-media-lbl:hover{
+    cursor: pointer;
+    color:#8eb9ff;
+}
+
+.item img{
+    margin-left:160px;
+}
+
+.carousel-text-inner{
+    font-size: 14px;
+    font-family: MyriadPro-Regular;
+    color: rgb(254, 254, 254);
+    line-height: 1.2;
+    /*text-align: left;*/
+    /*position: absolute;*/
+    /*left: 255.134px;*/
+    /*top: 394.25px;*/
+    /*width: 789px;*/
+    /*height: 27px;*/
+    z-index: 8;
+}
+
+.caros-h3{
+    font-size: 26px;
+    font-family: MyriadPro-Regular;
+    color: rgb(254, 254, 254);
+    line-height: 1.2;
+    /*text-align: left;*/
+    /*position: absolute;*/
+    /*left: 255.302px;*/
+    /*top: 358.576px;*/
+    z-index: 7;
+}
+
+ol.carousel-indicators {
+     position: absolute;
+     bottom: 29px;
+     margin: 0;
+     left: 0;
+     right: 0;
+     width: auto;
+ }
+
+ol.carousel-indicators li,
+ol.carousel-indicators li.active {
+    float: left;
+    width: 30px;
+    height: 7px;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    background: rgb(27, 172, 235);
+    margin-right:10px;
+}
+
+ol.carousel-indicators li.active {
+    background: white;
 }

@@ -17,9 +17,8 @@
         <link href="{{ asset('css/bootstrap-xl.css') }}" rel="stylesheet">
         <link href="{{ asset('css/bootstrap-xxl.css') }}" rel="stylesheet">
 
-        <script src="{{ asset('js/jquery-3.2.1.min.js')}}"></script>
-        <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{ asset('js/bootstrap-select.js')}}"></script>
+        <link href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
 
     </head>
 
@@ -59,6 +58,11 @@
     </body>
 
     <footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="{{ asset('owlcarousel/owl.carousel.min.js')}}"></script>
+        <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+        <script src="{{ asset('js/bootstrap-select.js')}}"></script>
 
     </footer>
 
