@@ -16,6 +16,8 @@
         <link href="{{ asset('css/bootstrap-select.css') }}" rel="stylesheet">
         <link href="{{ asset('css/bootstrap-xl.css') }}" rel="stylesheet">
         <link href="{{ asset('css/bootstrap-xxl.css') }}" rel="stylesheet">
+        <link href="{{asset('css/social-buttons.css')}}" rel="stylesheet">
+
 
         <link href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
         <link href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
@@ -53,7 +55,7 @@
                             </div>
 
                             <div class="header-text-right">
-                                <a href="#"> Twitch Live Channels </a> <label class="label-header">/</label> <a href="#"> Login </a>
+                                <a href="#"> Twitch Live Channels </a> <label class="label-header">/</label>@if(!auth()->check()) <a href="/login"> Login </a> <label class="label-header">/</label> <a href="/register"> Register </a> @else <a href="#"> My Profile </a> <label class="label-header">/</label> <a href="/logout"> Signout </a> @endif
                             </div>
 
                         </div>
@@ -71,22 +73,39 @@
 
         <footer class="footer-div">
 
-            <img src="{{asset('../images/logo-footer.png')}}" class="img-footer">
+            <div class="row">
+                <img src="{{asset('../images/logo-footer.png')}}" class="img-footer">
 
-            <div class="pull-right footer-right-div">
-                <ul>
-                    <li><a href="#">Esport League</a></li>
-                    <li><a href="#" class="slas">/</a></li>
-                    <li><a href="#">League Table</a></li>
-                    <li><a href="#" class="slas">/</a></li>
-                    <li><a href="#">Tournaments</a></li>
-                    <li><a href="#" class="slas">/</a></li>
-                    <li><a href="#">Twitch Live Channels</a></li>
-                    <li><a href="#" class="slas">/</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#" class="slas">/</a></li>
-                    <li><a href="#">Private Chat</a></li>
-                </ul>
+                <div class="pull-right footer-right-div">
+                    <ul>
+                        <li><a href="#">Esport League</a></li>
+                        <li><a href="#" class="slas">/</a></li>
+                        <li><a href="#">League Table</a></li>
+                        <li><a href="#" class="slas">/</a></li>
+                        <li><a href="#">Tournaments</a></li>
+                        <li><a href="#" class="slas">/</a></li>
+                        <li><a href="#">Twitch Live Channels</a></li>
+                        <li><a href="#" class="slas">/</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#" class="slas">/</a></li>
+                        <li><a href="#">Private Chat</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left:0px;margin-right:0px;">
+
+                <div class="row" style="margin-left:0px;margin-right:0px;background:#212121;width:100%;height:50px;">
+
+                    <div class="cpy-right">
+                        <label>&copy; 2017. All Rights Reserved.</label>
+                    </div>
+
+                    <div class="pull-right last-foot-right">
+                        <label style="margin-top:19px;margin-right:20px;">Privacy Policy  |  Terms & Conditions</label>
+                    </div>
+
+                </div>
             </div>
 
             <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -96,20 +115,7 @@
 
         </footer>
 
-        <div class="row" style="margin-left:0px;margin-right:0px;">
 
-            <div class="row" style="margin-left:0px;margin-right:0px;background:#212121;width:100%;height:50px;">
-
-                <div class="cpy-right">
-                    <label>&copy; 2017. All Rights Reserved.</label>
-                </div>
-
-                <div class="pull-right last-foot-right">
-                    <label style="margin-top:19px;margin-right:20px;">Privacy Policy  |  Terms & Conditions</label>
-                </div>
-
-            </div>
-        </div>
 
     </body>
 

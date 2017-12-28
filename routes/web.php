@@ -14,3 +14,24 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Register
+Route::get('/register', 'RegisterController@index');
+Route::post('register', 'RegisterController@create');
+//Login
+Route::get('/login', 'LoginController@index');
+Route::post('login', 'LoginController@login');
+Route::get('/logout', 'LoginController@logout');
+
+//Steam Auth
+Route::get('auth/steam', 'AuthController@redirectToSteam')->name('auth.steam');
+Route::get('auth/steam/handle', 'AuthController@handle')->name('auth.steam.handle');
+//----------------------------------
+
+//Facebook Auth
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
+//-------------------------------------
