@@ -36,7 +36,7 @@
                 </figure>
                 <div class="posts__inner">
                     <div class="posts__cat">
-                        <span class="label posts__cat-label">The Team</span>
+                        {{--<span class="label posts__cat-label">The Team</span>--}}
                     </div>
                     <h3 class="posts__title">Alchemists women team tryouts will start in January</h3>
                     <time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>
@@ -56,7 +56,7 @@
                 </figure>
                 <div class="posts__inner">
                     <div class="posts__cat">
-                        <span class="label posts__cat-label">The Team</span>
+                        {{--<span class="label posts__cat-label">The Team</span>--}}
                     </div>
                     <h3 class="posts__title">Checkout the new ride of our best player of the season</h3>
                     <time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>
@@ -76,7 +76,7 @@
                 </figure>
                 <div class="posts__inner">
                     <div class="posts__cat">
-                        <span class="label posts__cat-label">The Team</span>
+                        {{--<span class="label posts__cat-label">The Team</span>--}}
                     </div>
                     <h3 class="posts__title">All the players are taking a team trip this summer</h3>
                     <time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>
@@ -96,7 +96,7 @@
                 </figure>
                 <div class="posts__inner">
                     <div class="posts__cat">
-                        <span class="label posts__cat-label">The Team</span>
+                        {{--<span class="label posts__cat-label">The Team</span>--}}
                     </div>
                     <h3 class="posts__title">Alchemists women team tryouts will start in January</h3>
                     <time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>
@@ -116,7 +116,7 @@
                 </figure>
                 <div class="posts__inner">
                     <div class="posts__cat">
-                        <span class="label posts__cat-label">The Team</span>
+                        {{--<span class="label posts__cat-label">The Team</span>--}}
                     </div>
                     <h3 class="posts__title">All the players are taking a team trip this summer</h3>
                     <time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>
@@ -344,7 +344,7 @@
                             <div class="posts__item posts__item--card posts__item--category-1 card">
                                 <figure class="posts__thumb">
                                     <div class="posts__cat">
-                                        <span class="label posts__cat-label">The Team</span>
+                                        {{--<span class="label posts__cat-label">The Team</span>--}}
                                     </div>
                                     <a href="#"><img src="{{asset('images/samples/post-img3.jpg')}}" alt=""></a>
                                 </figure>
@@ -387,7 +387,7 @@
                                     <div class="posts__item posts__item--card posts__item--category-1 card">
                                         <figure class="posts__thumb">
                                             <div class="posts__cat">
-                                                <span class="label posts__cat-label">The Team</span>
+                                                {{--<span class="label posts__cat-label">The Team</span>--}}
                                             </div>
                                             <a href="#"><img src="{{asset('images/samples/post-img5.jpg')}}" alt=""></a>
                                         </figure>
@@ -426,7 +426,7 @@
                                         <li class="posts__item posts__item--category-1">
                                             <div class="posts__inner">
                                                 <div class="posts__cat">
-                                                    <span class="label posts__cat-label">The Team</span>
+                                                    {{--<span class="label posts__cat-label">The Team</span>--}}
                                                 </div>
                                                 <h6 class="posts__title"><a href="#">Trainings are getting really hard reaching the final</a></h6>
                                                 <time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>
@@ -478,7 +478,7 @@
                                 <div class="posts__item posts__item--category-1">
                                     <div class="posts__inner">
                                         <div class="posts__cat">
-                                            <span class="label posts__cat-label">The Team</span>
+                                            {{--<span class="label posts__cat-label">The Team</span>--}}
                                         </div>
                                         <h6 class="posts__title"><a href="#">Take a look at the brand <span class="text-primary">New Uniforms</span> for next season</a></h6>
                                         <time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>
@@ -535,7 +535,7 @@
                             <div class="posts__item posts__item--card posts__item--category-1 card">
                                 <figure class="posts__thumb">
                                     <div class="posts__cat">
-                                        <span class="label posts__cat-label">The Team</span>
+                                        {{--<span class="label posts__cat-label">The Team</span>--}}
                                     </div>
                                     <a href="#"><img src="{{asset('images/samples/post-img7.jpg')}}" alt=""></a>
                                 </figure>
@@ -568,7 +568,7 @@
                             <div class="posts__item posts__item--card posts__item--category-1 card">
                                 <figure class="posts__thumb">
                                     <div class="posts__cat">
-                                        <span class="label posts__cat-label">The Team</span>
+                                        {{--<span class="label posts__cat-label">The Team</span>--}}
                                     </div>
                                     <a href="#"><img src="{{asset('images/samples/post-img8.jpg')}}" alt=""></a>
                                 </figure>
@@ -599,7 +599,7 @@
                             <div class="posts__item posts__item--card posts__item--category-1 card">
                                 <figure class="posts__thumb">
                                     <div class="posts__cat">
-                                        <span class="label posts__cat-label">The Team</span>
+                                        {{--<span class="label posts__cat-label">The Team</span>--}}
                                     </div>
                                     <a href="#"><img src="{{asset('images/samples/post-img2.jpg')}}" alt=""></a>
                                 </figure>
@@ -649,7 +649,7 @@
                                         <div class="posts__inner">
                                             <div class="card__content">
                                                 <div class="posts__cat">
-                                                    <span class="label posts__cat-label">The Team</span>
+                                                    {{--<span class="label posts__cat-label">The Team</span>--}}
                                                 </div>
                                                 <h6 class="posts__title"><a href="#">The team is taking a summer vacation on Woody Valley</a></h6>
                                                 <time datetime="2016-08-17" class="posts__date">August 17th, 2016</time>
@@ -685,7 +685,7 @@
                                         <div class="posts__inner">
                                             <div class="card__content">
                                                 <div class="posts__cat">
-                                                    <span class="label posts__cat-label">The Team</span>
+                                                    {{--<span class="label posts__cat-label">The Team</span>--}}
                                                 </div>
                                                 <h6 class="posts__title"><a href="#">Jeremy Rittersen was called to be in the National Team</a></h6>
                                                 <time datetime="2016-08-16" class="posts__date">August 16th, 2016</time>
@@ -721,7 +721,7 @@
                                         <div class="posts__inner">
                                             <div class="card__content">
                                                 <div class="posts__cat">
-                                                    <span class="label posts__cat-label">The Team</span>
+                                                    {{--<span class="label posts__cat-label">The Team</span>--}}
                                                 </div>
                                                 <h6 class="posts__title"><a href="#">Alchemists New Stadium is gonna be ready in September 2017</a></h6>
                                                 <time datetime="2016-08-15" class="posts__date">August 15th, 2016</time>
@@ -757,7 +757,7 @@
                                         <div class="posts__inner">
                                             <div class="card__content">
                                                 <div class="posts__cat">
-                                                    <span class="label posts__cat-label">The Team</span>
+                                                    {{--<span class="label posts__cat-label">The Team</span>--}}
                                                 </div>
                                                 <h6 class="posts__title"><a href="#">The Championship Final will be be played in San Francisco</a></h6>
                                                 <time datetime="2016-08-18" class="posts__date">August 18th, 2016</time>
@@ -799,7 +799,7 @@
                     <!-- Widget: Standings -->
                     <aside class="widget card widget--sidebar widget-standings">
                         <div class="widget__title card__header card__header--has-btn">
-                            <h4>Playoff Standings</h4>
+                            <h4>Pro League Standings</h4>
                             <a href="#" class="btn btn-default btn-outline btn-xs card-header__button">See All Stats</a>
                         </div>
                         <div class="widget__content card__content">
@@ -1005,7 +1005,7 @@
                                     </figure>
                                     <div class="posts__inner">
                                         <div class="posts__cat">
-                                            <span class="label posts__cat-label">The Team</span>
+                                            {{--<span class="label posts__cat-label">The Team</span>--}}
                                         </div>
                                         <h6 class="posts__title"><a href="#">Jay Rorks is only 24 points away from breaking the record</a></h6>
                                         <time datetime="2016-08-22" class="posts__date">August 22nd, 2016</time>
@@ -1017,7 +1017,7 @@
                                     </figure>
                                     <div class="posts__inner">
                                         <div class="posts__cat">
-                                            <span class="label posts__cat-label">The Team</span>
+                                            {{--<span class="label posts__cat-label">The Team</span>--}}
                                         </div>
                                         <h6 class="posts__title"><a href="#">The new eco friendly stadium won a Leafy Award in 2016</a></h6>
                                         <time datetime="2016-08-21" class="posts__date">August 21st, 2016</time>
@@ -1029,7 +1029,7 @@
                                     </figure>
                                     <div class="posts__inner">
                                         <div class="posts__cat">
-                                            <span class="label posts__cat-label">The Team</span>
+                                            {{--<span class="label posts__cat-label">The Team</span>--}}
                                         </div>
                                         <h6 class="posts__title"><a href="#">The team is starting a new power breakfast regimen</a></h6>
                                         <time datetime="2016-08-21" class="posts__date">August 21st, 2016</time>
@@ -1307,7 +1307,7 @@
                                             <li class="posts__item posts__item--category-1">
                                                 <div class="posts__inner">
                                                     <div class="posts__cat">
-                                                        <span class="label posts__cat-label">The Team</span>
+                                                        {{--<span class="label posts__cat-label">The Team</span>--}}
                                                     </div>
                                                     <h6 class="posts__title"><a href="#">Jake Dribbler Announced that he is retiring next mnonth</a></h6>
                                                     <time datetime="2016-08-23" class="posts__date">August 23rd, 2016</time>
@@ -1319,7 +1319,7 @@
                                             <li class="posts__item posts__item--category-1">
                                                 <div class="posts__inner">
                                                     <div class="posts__cat">
-                                                        <span class="label posts__cat-label">The Team</span>
+                                                        {{--<span class="label posts__cat-label">The Team</span>--}}
                                                     </div>
                                                     <h6 class="posts__title"><a href="#">The Alchemists news coach is bringin a new shooting guard</a></h6>
                                                     <time datetime="2016-08-23" class="posts__date">August 23rd, 2016</time>
@@ -1331,7 +1331,7 @@
                                             <li class="posts__item posts__item--category-1">
                                                 <div class="posts__inner">
                                                     <div class="posts__cat">
-                                                        <span class="label posts__cat-label">The Team</span>
+                                                        {{--<span class="label posts__cat-label">The Team</span>--}}
                                                     </div>
                                                     <h6 class="posts__title"><a href="#">This Saturday starts the intensive training for the Final</a></h6>
                                                     <time datetime="2016-08-23" class="posts__date">August 23rd, 2016</time>
