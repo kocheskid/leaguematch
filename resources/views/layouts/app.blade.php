@@ -74,7 +74,10 @@
 
                 <!-- Account Navigation -->
                 <ul class="nav-account">
-                    {{--<li class="nav-account__item"><a href="#" data-toggle="modal" data-target="#modal-login-register">Your Account</a></li>--}}
+                    @if(Auth::check())
+                        <li class="nav-account__item"><a href="#" data-toggle="modal" data-target="#modal-login-register">Your Account</a></li>
+                    @endif
+
                     {{--<li class="nav-account__item nav-account__item--wishlist"><a href="shop-wishlist.html">Wishlist <span class="highlight">8</span></a></li>--}}
                     {{--<li class="nav-account__item"><a href="#">Currency: <span class="highlight">USD</span></a>--}}
                         {{--<ul class="main-nav__sub">--}}
@@ -91,8 +94,11 @@
                             <li><a href="#">German</a></li>
                         </ul>
                     </li>
+                    @if(Auth::check())
+                        <li class="nav-account__item nav-account__item--logout"><a href="/logout">Logout</a></li>
+                    @else
                     <li class="nav-account__item nav-account__item--logout"><a href="/login">Login</a></li>
-                    {{--<li class="nav-account__item nav-account__item--logout"><a href="#">Logout</a></li>--}}
+                    @endif
                 </ul>
                 <!-- Account Navigation / End -->
 

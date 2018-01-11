@@ -39,7 +39,7 @@
 
                             <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
                                 @if ($errors->has('message'))
-                                    <span class="help-block">
+                                    <span class="help-block" style="color:red;">
                                         <strong>{{ $errors->first('message') }}</strong>
                                     </span>
                                 @endif
@@ -59,12 +59,12 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password..." required>
-                                    @if ($errors->has('password'))
+                                <div class="form-group{{ $errors->has('login_password') ? ' has-error' : '' }}">
+                                    <label for="login_password">Password</label>
+                                    <input type="password" name="login_password" id="login_password" class="form-control" placeholder="Enter your password..." required>
+                                    @if ($errors->has('login_password'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
+                                            <strong>{{ $errors->first('login_password') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -77,7 +77,7 @@
                                     <span class="password-reminder">Forgot your password? <a href="#">Click Here</a></span>
                                 </div>
                                 <div class="form-group form-group--sm">
-                                    <a href="#" class="btn btn-primary-inverse btn-lg btn-block">Sign in to your account</a>
+                                    <button type="submit" class="btn btn-primary-inverse btn-lg btn-block">Sign in to your account</button>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -105,21 +105,48 @@
                         <div class="card__content">
 
                             <!-- Register Form -->
-                            <form action="#">
-                                <div class="form-group">
-                                    <label for="register-name">Your Email</label>
-                                    <input type="email" name="register-name" id="register-name" class="form-control" placeholder="Enter your email address...">
+                            <form class="form-horizontal" method="POST" action="/register">
+                                {{ csrf_field() }}
+
+                                <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                                    <label for="username">Your Username</label>
+                                    <input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control" placeholder="Enter your username..." required>
+
+                                    @if ($errors->has('username'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('username') }}</strong>
+                                        </span>
+                                    @endif
+
+                                </div>
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control" placeholder="Enter your email address..." required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+
+                                </div>
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                    <label for="password">Your Password</label>
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password..." required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+
                                 </div>
                                 <div class="form-group">
-                                    <label for="register-password">Your Password</label>
-                                    <input type="password" name="register-password" id="register-password" class="form-control" placeholder="Enter your password...">
-                                </div>
-                                <div class="form-group">
-                                    <label for="repeat-password">Repeat Password</label>
-                                    <input type="password" name="repeat-password" id="repeat-password" class="form-control" placeholder="Repeat your password...">
+                                    <label for="password_confirmation">Repeat Password</label>
+                                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Repeat your password..." required>
                                 </div>
                                 <div class="form-group form-group--submit">
-                                    <a href="#" class="btn btn-default btn-lg btn-block">Create Your Account</a>
+                                    <button type="submit" class="btn btn-default btn-lg btn-block">Create Your Account</button>
                                 </div>
                             </form>
                             <!-- Register Form / End -->

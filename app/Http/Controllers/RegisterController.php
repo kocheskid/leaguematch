@@ -14,14 +14,12 @@ class RegisterController extends Controller
     public function create(){
 
         $this->validate(request(), [
-            'first_name' => 'required',
-            'last_name' => 'required',
             'username' => 'required|unique:users,username',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6|confirmed'
         ]);
 
-        $user = User::create(request(['first_name', 'last_name', 'username', 'name', 'email', 'password']));
+        $user = User::create(request(['username', 'email', 'password']));
 
         auth()->login($user);
 
