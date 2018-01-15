@@ -19,6 +19,7 @@ class CreateUsersTableNew extends Migration
             $table->integer('user_id')->nullable();
             $table->string('provider_user_id')->nullable();
             $table->string('provider')->nullable();
+            $table->string('name')->nullable();
             $table->string('username')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('password')->nullable();

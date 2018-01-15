@@ -550,6 +550,40 @@
     </aside>
     <!-- Pushy Panel / End -->
 
+    @if(Session::has('Danger'))
+
+        <div class="alert alert-danger alert-dismissible" style="margin-bottom:0px;position: fixed; bottom: 15px; right: 15px; z-index:999;">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Error!</strong> {{Session::get('Danger')}}
+            {{--{{Session::flush('Danger')}}--}}
+        </div>
+
+        <script>
+            window.setTimeout(function () {
+                $(".alert-danger").fadeTo(1500, 0).slideUp(1500, function () {
+                    $(this).remove();
+                });
+            }, 10000);
+        </script>
+
+    @endif
+
+    @if(Session::has("Success"))
+
+        <div class="alert alert-success" style="margin-bottom:0px;position: fixed; bottom: 15px; right: 15px; z-index:999;">
+            <strong>Success!</strong> {{Session::get('Success')}}
+        </div>
+        {{--{{Session::flush('Success')}}--}}
+
+        <script>
+            window.setTimeout(function () {
+                $(".alert-success").fadeTo(1500, 0).slideUp(1500, function () {
+                    $(this).remove();
+                });
+            }, 10000);
+        </script>
+
+    @endif
 
     @yield('body')
 
@@ -835,6 +869,22 @@
 <!-- Template JS -->
 <script src="{{asset('js/init.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+
+@if(isset($steamid_check))
+
+    @if(!$steamid_check)
+
+        <script>
+            $(document).ready(function() {
+                $('#modal-steamid').modal('toggle');
+            });
+        </script>
+
+    @endif
+
+@endif
+
+
 
 </body>
 </html>

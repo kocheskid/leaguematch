@@ -15,7 +15,7 @@
                 <h5 class="hero-unit__subtitle">Elric Bros School</h5>
                 <h1 class="hero-unit__title">The <span class="text-primary">Alchemists</span></h1>
                 <div class="hero-unit__desc">Lorem ipsum dolor sit amet, consectetur adipisi nel elit, sed do eiusmod tempor incididunt ut labore et dolore .</div>
-                <a href="#" class="btn btn-inverse btn-sm btn-outline btn-icon-right btn-condensed hero-unit__btn">Read More <i class="fa fa-plus text-primary"></i></a>
+                <a href="#" class="btn btn-inverse btn-sm btn-outline btn-icon-right btn-condensed hero-unit__btn" data-toggle="modal" data-target="#modal-login-register">Read More <i class="fa fa-plus text-primary"></i></a>
             </div>
 
             <figure class="hero-unit__img">
@@ -1611,6 +1611,37 @@
     </div>
 
     <!-- Content / End -->
+
+
+    <!-- Login/Register Modal -->
+    <div class="modal fade" id="modal-steamid" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal--login" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="modal-account-holder">
+                        <div class="col-lg-12" style="text-align:center;margin-top:25px;">
+
+                            <div class="form-group">
+                                <h5>Add your SteamID to your account!</h5>
+                            </div>
+
+                            <div class="form-group">
+                                <a href="auth/steam" class="btn btn-primary btn-lg">Get your SteamID</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login/Register Modal / End -->
+
+
 
 
 @endsection

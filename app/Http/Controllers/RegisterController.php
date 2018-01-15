@@ -23,6 +23,7 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
+        Session::flash('Success', 'Account successfully created!');
         return redirect()->to('/');
 
     }

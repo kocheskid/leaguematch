@@ -11,19 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//ADMIN PAGES
+
+Route::get('/admin/admin', 'admin\AdminController@index');
+Route::get('/admin/admin/login', 'admin\LoginController@index');
+Route::post('/admin/admin/login', 'admin\LoginController@login');
+
+//ADMIN - END
 
 //Register
 Route::get('/register', 'RegisterController@index');
 Route::post('register', 'RegisterController@create');
 //Login
-Route::get('/login', 'LoginController@index');
-Route::post('login', 'LoginController@login');
+Route::get('/login', 'LoginController@index')->name('login');
+Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
 
 //Steam Auth

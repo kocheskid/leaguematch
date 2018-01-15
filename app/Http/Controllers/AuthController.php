@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Invisnik\LaravelSteamAuth\SteamAuth;
 use App\User;
 use Auth;
+use Session;
 
 class AuthController extends Controller
 {
@@ -55,7 +56,10 @@ class AuthController extends Controller
             if (!is_null($info)) {
                 $user = $this->findOrNewUser($info);
 
-                Auth::login($user, true);
+                if(!Auth::check()){
+                    Auth::login($user, true);
+                }
+
 
                 return redirect($this->redirectURL); // redirect to site
             }
@@ -74,14 +78,28 @@ class AuthController extends Controller
         $user = User::where('steamid', $info->steamID64)->first();
 
         if (!is_null($user)) {
+            Session::flash('Danger', 'There is already account that is connected with this SteamID!');
             return $user;
         }
 
-        return User::create([
-            'username' => $info->personaname,
-            'avatar' => $info->avatarfull,
-            'steamid' => $info->steamID64
-        ]);
+        if(Auth::check()){
+
+            $find_user = User::find(Auth::user()->id);
+            $find_user->steamid = $info->steamID64;
+
+            return $find_user->save();
+
+        }else{
+
+            return User::create([
+                'username' => $info->personaname,
+                'avatar' => $info->avatarfull,
+                'steamid' => $info->steamID64
+            ]);
+
+        }
+
+
     }
 
 }
