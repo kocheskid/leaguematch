@@ -1,8 +1,8 @@
 <?php
-
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use App\Permission;
+use App\Role;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,57 +13,44 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // Ask for db migration refresh, default is no
-        if ($this->command->confirm('Do you wish to refresh migration before seeding, it will clear all old data ?')) {
-            // Call the php artisan migrate:refresh
+        // Ask for confirmation to refresh migration
+        if ($this->command->confirm('Do you wish to refresh migration before seeding, Make sure it will clear all old data ?')) {
             $this->command->call('migrate:refresh');
-            $this->command->warn("Data cleared, starting from blank database.");
+            $this->command->warn("Data deleted, starting from fresh database.");
         }
-
         // Seed the default permissions
-        Permission::firstOrCreate(['name' => 'Administer roles & permissions', 'guard_name' => 'isAdmin']);
-
-
+        $permissions = Permission::defaultPermissions();
+        foreach ($permissions as $permission) {
+            Permission::firstOrCreate(['name' => $permission]);
+        }
         $this->command->info('Default Permissions added.');
-
-        // Confirm roles needed
+        // Ask to confirm to assign admin or user role
         if ($this->command->confirm('Create Roles for user, default is admin and user? [y|N]', true)) {
-
             // Ask for roles from input
-            $input_roles = $this->command->ask('Enter roles in comma separate format.', 'Admin,User');
-
+            $roles = $this->command->ask('Enter roles in comma separate format.', 'Admin,User');
             // Explode roles
-            $roles_array = explode(',', $input_roles);
-
+            $rolesArray = explode(',', $roles);
             // add roles
-            foreach($roles_array as $role) {
-                $role = Role::firstOrCreate(['name' => trim($role), 'guard_name' => 'isAdmin']);
-
+            foreach($rolesArray as $role) {
+                $role = Role::firstOrCreate(['name' => trim($role)]);
                 if( $role->name == 'Admin' ) {
-                    // assign all permissions
-                    $role->syncPermissions(Permission::all());
-                    $this->command->info('Admin granted all the permissions');
+                    // assign all permissions to admin role
+                    $role->permissions()->sync(Permission::all());
+                    $this->command->info('Admin will have full rights');
                 } else {
-                    // for others by default only read access
-                    $role->syncPermissions(Permission::where('name', 'LIKE', 'view_%')->get());
+                    // for others, give access to view only
+                    $role->permissions()->sync(Permission::where('name', 'LIKE', 'view_%')->get());
                 }
-
                 // create one user for each role
                 $this->createUser($role);
             }
-
-            $this->command->info('Roles ' . $input_roles . ' added successfully');
-
+            $this->command->info('Roles ' . $roles . ' added successfully');
         } else {
             Role::firstOrCreate(['name' => 'User']);
-            $this->command->info('Added only default user role.');
+            $this->command->info('By default, User role added.');
         }
 
-        // now lets seed some posts for demo
-        $this->command->info('Some Posts data seeded.');
-        $this->command->warn('All done :)');
     }
-
     /**
      * Create a user with given role
      *
@@ -71,13 +58,13 @@ class DatabaseSeeder extends Seeder
      */
     private function createUser($role)
     {
-        $user = factory(\App\User::class)->create();
+        $user = factory(User::class)->create();
         $user->assignRole($role->name);
-
         if( $role->name == 'Admin' ) {
-            $this->command->info('Here is your admin details to login:');
-            $this->command->warn($user->username);
-            $this->command->warn('Password is "secret"');
+            $this->command->info('Admin login details:');
+            $this->command->warn('Username : '.$user->email);
+            $this->command->warn('Password : "secret"');
         }
     }
+
 }

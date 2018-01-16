@@ -1,56 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" class="fullscreen-bg">
 <head>
-    <title>Matrix Admin</title><meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin/css/bootstrap-responsive.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin/css/matrix-login.css')}}" />
-    <link href="{{asset('admin/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-
+    <title>Login | Klorofil Pro - Bootstrap Admin Dashboard Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="{{asset('admin/assets/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/assets/vendor/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/assets/vendor/themify-icons/css/themify-icons.css')}}">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{{asset('admin/assets/css/main.css')}}">
+    <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+    <link rel="stylesheet" href="{{asset('admin/assets/css/demo.css')}}">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('/admin/assets/img/apple-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('/admin/assets/img/favicon.png')}}">
 </head>
 <body>
-<div id="loginbox">
-    <form id="loginform" class="form-vertical" action="#">
-        <div class="control-group normal_text"> <h3><img src="{{asset('images/logo-outplayed.png')}}" alt="Logo" /></h3></div>
-        <div class="control-group">
-            <div class="controls">
-                <div class="main_input_box">
-                    <span class="add-on bg_lg"><i class="icon-user"> </i></span><input type="text" placeholder="Username" />
-                </div>
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <div class="main_input_box">
-                    <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" placeholder="Password" />
-                </div>
-            </div>
-        </div>
-        <div class="form-actions">
-            <span class="pull-right"><a type="submit" href="#" class="btn btn-success"> Login</a></span>
-        </div>
-    </form>
-    <form id="recoverform" action="#" class="form-vertical">
-        <p class="normal_text">Enter your e-mail address below and we will send you instructions how to recover a password.</p>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <div class="vertical-align-wrap">
+        <div class="vertical-align-middle">
+            <div class="auth-box ">
+                <div class="left">
+                    <div class="content">
+                        <div class="header">
+                            <div class="logo text-center">
+                                <img src="{{asset('images/logo-outplayed.png')}}" alt="Outplaed">
+                            </div>
+                            <p class="lead">Login to your account</p>
+                        </div>
+                        <form class="form-auth-small" action="index.php">
+                            <div class="form-group">
+                                <label for="signin-email" class="control-label sr-only">Username</label>
+                                <input type="email" class="form-control" id="signin-email">
+                            </div>
+                            <div class="form-group">
+                                <label for="signin-password" class="control-label sr-only">Password</label>
+                                <input type="password" class="form-control" id="signin-password">
+                            </div>
+                            <div class="form-group clearfix">
+                                <label class="fancy-checkbox element-left custom-bgcolor-blue">
+                                    <input type="checkbox">
+                                    <span class="text-muted">Remember me</span>
+                                </label>
+                                <span class="helper-text element-right">Don't have an account? <a href="/login">Register</a></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
 
-        <div class="controls">
-            <div class="main_input_box">
-                <span class="add-on bg_lo"><i class="icon-envelope"></i></span><input type="text" placeholder="E-mail address" />
+                        </form>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="overlay"></div>
+                    <div class="content text">
+                        <h1 class="heading">Outplayed Pro</h1>
+                        <p>by The Develovers</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
-
-        <div class="form-actions">
-            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; Back to login</a></span>
-            <span class="pull-right"><a class="btn btn-info">Recover</a></span>
-        </div>
-    </form>
+    </div>
 </div>
-
-<script src="{{asset('admin/js/jquery.min.js')}}"></script>
-<script src="{{asset('admin/js/matrix.login.js')}}"></script>
+<!-- END WRAPPER -->
 </body>
-
 </html>
