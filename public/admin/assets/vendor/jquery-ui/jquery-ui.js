@@ -4419,7 +4419,7 @@ var widgetsAccordion = $.widget( "ui.accordion", {
 		// Clean up content panels
 		contents = this.headers.next()
 			.css( "display", "" )
-			.removeAttr( "role aria-hidden aria-labelledby" )
+			.removeAttr( "roles aria-hidden aria-labelledby" )
 			.removeUniqueId();
 
 		if ( this.options.heightStyle !== "content" ) {
@@ -5080,7 +5080,7 @@ var widgetsMenu = $.widget( "ui.menu", {
 				.removeAttr( "role aria-disabled" ),
 			submenus = items.children( ".ui-menu-item-wrapper" )
 				.removeUniqueId()
-				.removeAttr( "tabIndex role aria-haspopup" );
+				.removeAttr( "tabIndex roles aria-haspopup" );
 
 		// Destroy (sub)menus
 		this.element
@@ -5288,7 +5288,7 @@ var widgetsMenu = $.widget( "ui.menu", {
 		focused = this.active.children( ".ui-menu-item-wrapper" );
 		this._addClass( focused, null, "ui-state-active" );
 
-		// Only update aria-activedescendant if there's a role
+		// Only update aria-activedescendant if there's a roles
 		// otherwise we assume focus is managed elsewhere
 		if ( this.options.role ) {
 			this.element.attr( "aria-activedescendant", focused.attr( "id" ) );
@@ -13396,7 +13396,7 @@ var widgetsProgressbar = $.widget( "ui.progressbar", {
 	},
 
 	_destroy: function() {
-		this.element.removeAttr( "role aria-valuemin aria-valuemax aria-valuenow" );
+		this.element.removeAttr( "roles aria-valuemin aria-valuemax aria-valuenow" );
 
 		this.valueDiv.remove();
 	},
@@ -17219,7 +17219,7 @@ $.widget( "ui.spinner", {
 	_destroy: function() {
 		this.element
 			.prop( "disabled", false )
-			.removeAttr( "autocomplete role aria-valuemin aria-valuemax aria-valuenow" );
+			.removeAttr( "autocomplete roles aria-valuemin aria-valuemax aria-valuenow" );
 
 		this.uiSpinner.replaceWith( this.element );
 	},
@@ -18033,7 +18033,7 @@ $.widget( "ui.tabs", {
 			if ( $.data( this, "ui-tabs-destroy" ) ) {
 				$( this ).remove();
 			} else {
-				$( this ).removeAttr( "role tabIndex " +
+				$( this ).removeAttr( "roles tabIndex " +
 					"aria-live aria-busy aria-selected aria-labelledby aria-hidden aria-expanded" );
 			}
 		} );

@@ -20,12 +20,16 @@ Route::get('/admin/admin', 'admin\AdminController@index');
 Route::get('/admin/admin/login', 'admin\LoginController@index');
 Route::post('/admin/admin/login', 'admin\LoginController@login');
 
-Route::group( ['middleware' => ['auth']], function() {
+Route::group( ['middleware' => ['auth', 'has_permission']], function() {
     Route::resource('/admin/users', 'admin\UsersController');
     Route::resource('/admin/roles', 'RoleController');
     Route::resource('/admin/permissions','PermissionController');
 });
 
+
+Route::get('/admin/401', function(){
+    return view('admin.401');
+});
 //ADMIN - END
 
 //Register

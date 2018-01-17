@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Permission;
+use App\Role;
 use Illuminate\Http\Request;
 
 class PermissionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        //
+        $permissions = Permission::all();
+        return view('admin.permissions.index',compact('permissions'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -24,9 +24,9 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::get(); //Get all roles
+        return view('admin.permissions.create',compact('roles'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -35,31 +35,25 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required|max:40',
+        ]);
+        $permission = new Permission();
+        $permission->name = $request->name;
+        $permission->save();
+        if ($request->roles <> '') {
+            foreach ($request->roles as $key=>$value) {
+                $role = Role::find($value);
+                $role->permissions()->attach($permission);
+            }
+        }
+        return redirect()->route('permissions.index')->with('success','Permission added successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Permission  $permission
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Permission $permission)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Permission  $permission
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Permission $permission)
     {
-        //
+        return view('admin.permissions.edit', compact('permission'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -69,9 +63,15 @@ class PermissionController extends Controller
      */
     public function update(Request $request, Permission $permission)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required',
+        ]);
+        $permission->name=$request->name;
+        $permission->save();
+        return redirect()->route('admin.permissions.index')
+            ->with('success',
+                'Permission'. $permission->name.' updated!');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -80,6 +80,9 @@ class PermissionController extends Controller
      */
     public function destroy(Permission $permission)
     {
-        //
+        $permission->delete();
+        return redirect()->route('permissions.index')
+            ->with('success',
+                'Permission deleted successfully!');
     }
 }

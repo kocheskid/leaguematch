@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\UserDetails;
 use App\Role;
 use App\Permission;
 
@@ -52,16 +53,22 @@ class UsersController extends Controller
     }
     public function edit($id) {
         $user = User::findOrFail($id);
+        $user_details = UserDetails::where('user_id', $id)->first();
+        if(!$user_details){
+            $user_details = new UserDetails();
+        }
         $roles = Role::get();
-        return view('admin.users.edit', compact('user', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles', 'user_details'));
     }
     public function update(Request $request, $id) {
         $user = User::findOrFail($id);
-        $this->validate($request, [
-            'name'=>'required|max:120',
-            'email'=>'required|email|unique:users,email,'.$id,
-            'password'=>'required|min:6|confirmed'
-        ]);
+
+//        $this->validate($request, [
+//            'name'=>'required|max:120',
+//            'email'=>'required|email|unique:users,email,'.$id,
+//            'password'=>'required|min:6|confirmed'
+//        ]);
+
         $input = $request->except('roles');
         $user->fill($input)->save();
         if ($request->roles <> '') {

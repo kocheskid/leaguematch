@@ -24,7 +24,7 @@ return [
          * `Spatie\Permission\Contracts\Role` contract.
          */
 
-        'role' => Spatie\Permission\Models\Role::class,
+        'roles' => Spatie\Permission\Models\Role::class,
 
     ],
 
@@ -73,7 +73,7 @@ return [
 
     /*
      * By default all permissions will be cached for 24 hours unless a permission or
-     * role is updated. Then the cache will be flushed immediately.
+     * roles is updated. Then the cache will be flushed immediately.
      */
 
     'cache_expiration_time' => 60 * 24,

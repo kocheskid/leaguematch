@@ -48,7 +48,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="{{asset('admin/assets/img/user.png')}}" alt="Avatar">
-                            <span>Samuel</span>
+                            <span>{{Auth::user()->username}}</span>
                         </a>
                         <ul class="dropdown-menu logged-user-menu">
                             <li><a href="#"><i class="ti-user"></i> <span>My Profile</span></a></li>
@@ -77,12 +77,24 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="/admin/users"><i class="ti-user"></i> <span class="title">Users</span></a></li>
+                @can('manageUsers')
+                <li class="panel">
+                    <a href="#subUsers" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-user"></i> <span class="title">Users</span> <i class="icon-submenu ti-angle-left"></i></a>
+                    <div id="subUsers" class="collapse ">
+                        <ul class="submenu">
+                            <li><a href="/admin/users">Manage Users</a></li>
+                            <li><a href="/admin/roles">Roles</a></li>
+                            <li><a href="/admin/permissions">Permissions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                @endcan
             </ul>
             <button type="button" class="btn-toggle-minified" title="Toggle Minified Menu"><i class="ti-arrows-horizontal"></i></button>
         </nav>
     </div>
     <!-- END LEFT SIDEBAR -->
+
     <!-- MAIN -->
     <div class="main">
         <!-- MAIN CONTENT -->
@@ -402,9 +414,9 @@
                 "<h3 class='popover-title'></h3>" +
                 "<div class='popover-content'></div>" +
                 "<div class='popover-navigation'>" +
-                "<button class='btn btn-default btn-sm' data-role='prev'>« Prev</button>" +
-                "<button class='btn btn-primary btn-sm' data-role='next'>Next »</button>" +
-                "<button class='btn btn-default btn-sm' data-role='end'>End tour</button>" +
+                "<button class='btn btn-default btn-sm' data-roles='prev'>« Prev</button>" +
+                "<button class='btn btn-primary btn-sm' data-roles='next'>Next »</button>" +
+                "<button class='btn btn-default btn-sm' data-roles='end'>End tour</button>" +
                 "</div>" +
                 "</div>",
             });

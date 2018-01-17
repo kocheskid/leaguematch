@@ -56,7 +56,7 @@
         duration: false,
         delay: false,
         basePath: '',
-        template: '<div class="popover" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-default" data-role="prev">&laquo; Prev</button> <button class="btn btn-sm btn-default" data-role="next">Next &raquo;</button> <button class="btn btn-sm btn-default" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm btn-default" data-role="end">End tour</button> </div> </div>',
+        template: '<div class="popover" roles="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-default" data-roles="prev">&laquo; Prev</button> <button class="btn btn-sm btn-default" data-roles="next">Next &raquo;</button> <button class="btn btn-sm btn-default" data-roles="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm btn-default" data-roles="end">End tour</button> </div> </div>',
         afterSetState: function(key, value) {},
         afterGetState: function(key, value) {},
         afterRemoveState: function(key) {},
@@ -609,9 +609,9 @@
       }
       $template = $.isFunction(template) ? $(template(i, step)) : $(template);
       $navigation = $template.find('.popover-navigation');
-      $prev = $navigation.find('[data-role="prev"]');
-      $next = $navigation.find('[data-role="next"]');
-      $resume = $navigation.find('[data-role="pause-resume"]');
+      $prev = $navigation.find('[data-roles="prev"]');
+      $next = $navigation.find('[data-roles="next"]');
+      $resume = $navigation.find('[data-roles="pause-resume"]');
       if (this._isOrphan(step)) {
         $template.addClass('orphan');
       }
@@ -642,7 +642,7 @@
     Tour.prototype._focus = function($tip, $element, end) {
       var $next, role;
       role = end ? 'end' : 'next';
-      $next = $tip.find("[data-role='" + role + "']");
+      $next = $tip.find("[data-roles='" + role + "']");
       return $element.on('shown.bs.popover', function() {
         return $next.focus();
       });
@@ -735,24 +735,24 @@
     Tour.prototype._initMouseNavigation = function() {
       var _this;
       _this = this;
-      return $(document).off("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-role='prev']").off("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-role='next']").off("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-role='end']").off("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-role='pause-resume']").on("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-role='next']", (function(_this) {
+      return $(document).off("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-roles='prev']").off("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-roles='next']").off("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-roles='end']").off("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-roles='pause-resume']").on("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-roles='next']", (function(_this) {
         return function(e) {
           e.preventDefault();
           return _this.next();
         };
-      })(this)).on("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-role='prev']", (function(_this) {
+      })(this)).on("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-roles='prev']", (function(_this) {
         return function(e) {
           e.preventDefault();
           if (_this._current > 0) {
             return _this.prev();
           }
         };
-      })(this)).on("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-role='end']", (function(_this) {
+      })(this)).on("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-roles='end']", (function(_this) {
         return function(e) {
           e.preventDefault();
           return _this.end();
         };
-      })(this)).on("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-role='pause-resume']", function(e) {
+      })(this)).on("click.tour-" + this._options.name, ".popover.tour-" + this._options.name + " *[data-roles='pause-resume']", function(e) {
         var $this;
         e.preventDefault();
         $this = $(this);

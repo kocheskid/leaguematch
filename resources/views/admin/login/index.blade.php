@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="fullscreen-bg">
 <head>
-    <title>Login | Klorofil Pro - Bootstrap Admin Dashboard Template</title>
+    <title>Login | Outplayed</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -33,14 +33,16 @@
                             </div>
                             <p class="lead">Login to your account</p>
                         </div>
-                        <form class="form-auth-small" action="index.php">
+
+                        <form class="form-auth-small" action="/admin/admin/login" method="POST">
+                            {{ csrf_field() }}
                             <div class="form-group">
-                                <label for="signin-email" class="control-label sr-only">Username</label>
-                                <input type="email" class="form-control" id="signin-email">
+                                <label for="username" class="control-label sr-only">Username</label>
+                                <input type="text" class="form-control" id="username" name="username">
                             </div>
                             <div class="form-group">
-                                <label for="signin-password" class="control-label sr-only">Password</label>
-                                <input type="password" class="form-control" id="signin-password">
+                                <label for="login_password" class="control-label sr-only">Password</label>
+                                <input type="password" class="form-control" id="login_password" name="login_password">
                             </div>
                             <div class="form-group clearfix">
                                 <label class="fancy-checkbox element-left custom-bgcolor-blue">

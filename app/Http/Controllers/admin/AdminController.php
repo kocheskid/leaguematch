@@ -13,6 +13,15 @@ use App\User;
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin.home.index');
+        if(Auth::check()){
+            if (Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Moderator')){
+                return view('admin.home.index');
+            }else{
+                return view('admin.login.index');
+            }
+        }else{
+            return view('admin.login.index');
+        }
+
     }
 }
