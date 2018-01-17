@@ -7,9 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
+
     <link rel="stylesheet" href="{{asset('admin/assets/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/assets/vendor/summernote/summernote.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/vendor/font-awesome/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/vendor/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/assets/vendor/bootstrap-markdown/bootstrap-markdown.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/vendor/pace/themes/orange/pace-theme-minimal.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/vendor/datatables/css-main/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/vendor/datatables/css-bootstrap/dataTables.bootstrap.min.css')}}">
@@ -25,6 +28,40 @@
     <link rel="stylesheet" href="{{asset('admin/assets/css/skins/navbar3.css')}}" type="text/css">
     <!-- FOR DEMO PURPOSES ONLY. You should/may remove this in your project -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/demo.css')}}">
+
+
+
+    <script src="{{asset('/admin/assets/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/pace/pace.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/bootstrap-progressbar/js/bootstrap-progressbar.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/Flot/jquery.flot.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/Flot/jquery.flot.resize.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/Flot/jquery.flot.time.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/flot.tooltip/jquery.flot.tooltip.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/x-editable/bootstrap3-editable/js/bootstrap-editable.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery.maskedinput/jquery.maskedinput.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/moment/min/moment.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery-sparkline/js/jquery.sparkline.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/bootstrap-tour/js/bootstrap-tour.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery-ui/ui/widget.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery-ui/ui/data.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery-ui/ui/scroll-parent.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery-ui/ui/disable-selection.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery-ui/ui/widgets/mouse.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery-ui/ui/widgets/sortable.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/datatables/js-main/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/datatables/js-bootstrap/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jquery-appear/jquery.appear.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jqvmap/jquery.vmap.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jqvmap/maps/jquery.vmap.world.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/chart-js/Chart.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/raphael/raphael.min.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/justgage-toorshia/justgage.js')}}"></script>
+    <script src="{{asset('/admin/assets/scripts/klorofilpro-common.js')}}"></script>
+    <script src="{{asset('/admin/assets/vendor/summernote/summernote.min.js')}}"></script>
+
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('admin/assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('admin/assets/img/favicon.png')}}">
@@ -73,7 +110,7 @@
                     <a href="#subNews" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-notepad"></i> <span class="title">News</span> <i class="icon-submenu ti-angle-left"></i></a>
                     <div id="subNews" class="collapse ">
                         <ul class="submenu">
-                            <li><a href="#">Add News</a></li>
+                            <li><a href="/admin/news">Add News</a></li>
                         </ul>
                     </div>
                 </li>
@@ -111,35 +148,7 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script src="{{asset('/admin/assets/vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/pace/pace.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/bootstrap-progressbar/js/bootstrap-progressbar.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/Flot/jquery.flot.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/Flot/jquery.flot.resize.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/Flot/jquery.flot.time.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/flot.tooltip/jquery.flot.tooltip.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/x-editable/bootstrap3-editable/js/bootstrap-editable.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery.maskedinput/jquery.maskedinput.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery-sparkline/js/jquery.sparkline.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/bootstrap-tour/js/bootstrap-tour.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery-ui/ui/widget.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery-ui/ui/data.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery-ui/ui/scroll-parent.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery-ui/ui/disable-selection.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery-ui/ui/widgets/mouse.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery-ui/ui/widgets/sortable.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/datatables/js-main/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/datatables/js-bootstrap/dataTables.bootstrap.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jquery-appear/jquery.appear.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jqvmap/maps/jquery.vmap.world.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/chart-js/Chart.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/raphael/raphael.min.js')}}"></script>
-<script src="{{asset('/admin/assets/vendor/justgage-toorshia/justgage.js')}}"></script>
-<script src="{{asset('/admin/assets/scripts/klorofilpro-common.js')}}"></script>
+
 
 <script>
     $(function()

@@ -63,11 +63,17 @@ class UsersController extends Controller
     public function update(Request $request, $id) {
         $user = User::findOrFail($id);
 
-//        $this->validate($request, [
-//            'name'=>'required|max:120',
-//            'email'=>'required|email|unique:users,email,'.$id,
-//            'password'=>'required|min:6|confirmed'
-//        ]);
+        if($request['switch-checkbox'] == 'on'){
+            $lock = 1;
+        }else{
+            $lock = 0;
+        }
+
+        $usr_det = array('user_id' => $id, 'first_name' => $request['first_name'], 'last_name' => $request['last_name'], 'age' => $request['age'], 'nationality' => $request['nationality'], 'lock' => $lock);
+
+        $ud_model = UserDetails::find(['user_id' => $id])->first();
+
+        $ud_model->fill($usr_det)->save();
 
         $input = $request->except('roles');
         $user->fill($input)->save();

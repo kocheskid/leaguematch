@@ -20,6 +20,11 @@ Route::get('/admin/admin', 'admin\AdminController@index');
 Route::get('/admin/admin/login', 'admin\LoginController@index');
 Route::post('/admin/admin/login', 'admin\LoginController@login');
 
+//ADMIN NEWS
+Route::get('/admin/news', 'admin\NewsController@index');
+Route::get('/admin/news/create', 'admin\NewsController@create');
+Route::post('/admin/news/create', 'admin\NewsController@store');
+
 Route::group( ['middleware' => ['auth', 'has_permission']], function() {
     Route::resource('/admin/users', 'admin\UsersController');
     Route::resource('/admin/roles', 'RoleController');
