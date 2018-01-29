@@ -54,3 +54,7 @@ Route::get('auth/steam/handle', 'AuthController@handle')->name('auth.steam.handl
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 //-------------------------------------
+
+
+Route::get('/news', 'NewsController@index');
+Route::get('/news/{id}', 'NewsController@post');

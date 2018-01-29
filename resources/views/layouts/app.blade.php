@@ -378,7 +378,7 @@
                                     {{--<li><a href="staff-single.html">Staff Member</a></li>--}}
                                 {{--</ul>--}}
                             </li>
-                            <li class=""><a href="#">News</a>
+                            <li class=""><a href="{{asset('news/')}}">News</a>
                                 {{--<ul class="main-nav__sub">--}}
                                     {{--<li><a href="blog-1.html">News - version 1</a></li>--}}
                                     {{--<li><a href="blog-2.html">News - version 2</a></li>--}}
