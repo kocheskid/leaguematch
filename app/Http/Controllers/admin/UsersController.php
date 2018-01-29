@@ -8,6 +8,7 @@ use App\User;
 use App\UserDetails;
 use App\Role;
 use App\Permission;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -27,6 +28,10 @@ class UsersController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->can('Admin')){
+            print_r('asda');
+            exit();
+        }
         $users = User::latest()->paginate();
         return view('admin.users.index', compact('users'));
     }

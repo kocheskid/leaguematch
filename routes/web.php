@@ -16,7 +16,7 @@ Route::get('/', 'HomeController@index');
 
 //ADMIN PAGES
 
-Route::get('/admin/admin', 'admin\AdminController@index');
+
 Route::get('/admin/admin/login', 'admin\LoginController@index');
 Route::post('/admin/admin/login', 'admin\LoginController@login');
 
@@ -26,6 +26,7 @@ Route::get('/admin/news/create', 'admin\NewsController@create');
 Route::post('/admin/news/create', 'admin\NewsController@store');
 
 Route::group( ['middleware' => ['auth', 'has_permission']], function() {
+    Route::get('/admin/admin', 'admin\AdminController@index');
     Route::resource('/admin/users', 'admin\UsersController');
     Route::resource('/admin/roles', 'RoleController');
     Route::resource('/admin/permissions','PermissionController');
