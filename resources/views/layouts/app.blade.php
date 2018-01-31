@@ -75,7 +75,7 @@
                 <!-- Account Navigation -->
                 <ul class="nav-account">
                     @if(Auth::check())
-                        <li class="nav-account__item"><a href="#" data-toggle="modal" data-target="#modal-login-register">Your Account</a></li>
+                        <li class="nav-account__item"><a href="{{asset('/profile/')}}">Your Account</a></li>
                     @endif
 
                     {{--<li class="nav-account__item nav-account__item--wishlist"><a href="shop-wishlist.html">Wishlist <span class="highlight">8</span></a></li>--}}

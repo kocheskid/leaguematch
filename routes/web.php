@@ -59,3 +59,8 @@ Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/news', 'NewsController@index');
 Route::get('/news/{id}', 'NewsController@post');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/profile/', 'ProfileController@index');
+    Route::post('/profile/update/', 'ProfileController@update');
+});

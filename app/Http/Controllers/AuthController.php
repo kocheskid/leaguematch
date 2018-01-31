@@ -78,7 +78,6 @@ class AuthController extends Controller
         $user = User::where('steamid', $info->steamID64)->first();
 
         if (!is_null($user)) {
-            Session::flash('Danger', 'There is already account that is connected with this SteamID!');
             return $user;
         }
 
