@@ -109,14 +109,6 @@
         <!-- Header Secondary -->
         <div class="header__secondary">
             <div class="container">
-                <!-- Header Search Form -->
-                <div class="header-search-form">
-                    <form action="#" id="mobile-search-form" class="search-form">
-                        <input type="text" class="form-control header-mobile__search-control" value="" placeholder="Enter your seach here...">
-                        <button type="submit" class="header-mobile__search-submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-                <!-- Header Search Form / End -->
                 {{--<ul class="info-block info-block--header">--}}
                     {{--<li class="info-block__item info-block__item--contact-primary">--}}
                         {{--<svg role="img" class="df-icon df-icon--jersey">--}}
@@ -408,19 +400,15 @@
                             </li>
                         </ul>
 
-                        <!-- Social Links -->
-                        <ul class="social-links social-links--inline social-links--main-nav">
-                            <li class="social-links__item">
-                                <a href="#" class="social-links__link" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li class="social-links__item">
-                                <a href="#" class="social-links__link" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li class="social-links__item">
-                                <a href="#" class="social-links__link" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a>
-                            </li>
-                        </ul>
-                        <!-- Social Links / End -->
+                        <!-- Header Search Form -->
+                            <div class="header-search-form">
+                                <form action="#" id="mobile-search-form" class="search-form">
+                                    <input type="text" class="form-control header-mobile__search-control" value="" placeholder="Enter your seach here...">
+                                    <button type="submit" class="header-mobile__search-submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                <!-- Header Search Form / End -->
+
 
                         <!-- Pushy Panel Toggle -->
                         {{--<a href="#" class="pushy-panel__toggle">--}}
