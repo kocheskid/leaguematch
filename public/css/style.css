@@ -102,6 +102,21 @@ Description:  General styling for template (including Header, Footer, Sidebar)
     - Album
     - Modal Login
 */
+
+
+
+/* 
+
+
+BASIC COLORS
+
+Blue:#00b8e2;  
+Blue Hover: #15c8f1
+
+ */
+
+
+
 :root {
   --headings-color: #31404b;
   --circular-track-color: #ecf0f6;
@@ -1215,7 +1230,7 @@ fieldset[disabled] .btn-primary.focus {
 
 .btn-primary-inverse {
   color: #fff;
-  background-color: #ffcc00;
+  background-color: #00b8e2;  
   border-color: transparent;
 }
 
@@ -1227,7 +1242,7 @@ fieldset[disabled] .btn-primary.focus {
 
 .btn-primary-inverse:hover {
   color: #fff;
-  background-color: #ff7e1f;
+  background-color: #15c8f1;
   border-color: transparent;
 }
 
