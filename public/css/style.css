@@ -2148,7 +2148,7 @@ fieldset[disabled] .btn-odnoklassniki.focus {
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #ffdc11;
+  background-color: #00b8e2;
   border-radius: 3px 0 0 0;
 }
 
@@ -5624,7 +5624,7 @@ input.header-mobile__search-control:focus {
   padding: 0;
   border: none;
   font-size: 16px;
-  color: #ffdc11;
+  color: #00b8e2;
   transition: color, background-color 0.3s ease;
   border-radius: 0 20px 20px 0;
 }
@@ -5873,13 +5873,13 @@ input.header-mobile__search-control:focus {
 }
 
 .main-nav__list > li.active > a {
-  color: #ffdc11;
+  color: #00b8e2;
   text-decoration: none;
   background-color: transparent;
 }
 
 .main-nav__list > li.active > a::before {
-  background-color: #ffdc11;
+  background-color: #00b8e2;
 }
 
 .main-nav__list > li.has-children > a::after {
@@ -7109,7 +7109,7 @@ input.header-mobile__search-control:focus {
 
 @media (min-width: 768px) {
   .footer-secondary--has-decor {
-    background-color: #ffdc11;
+    background-color: #00b8e2;
   }
 }
 
@@ -11603,7 +11603,7 @@ ul.posts:not(.post-grid) {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ffdc11;
+  background-color: #00b8e2;
   z-index: 1;
   text-align: right;
   line-height: 10px;
