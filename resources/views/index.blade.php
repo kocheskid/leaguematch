@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Esgl.eu')
+@section('title','Outplayed - Your eSport League')
 
 @section('body')
 
