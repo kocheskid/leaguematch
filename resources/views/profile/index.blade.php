@@ -61,8 +61,8 @@
                             <div class="player-info-details__value"><?php echo empty($user_details['country']) ? 'N/A' : $user_details['country']  ?></div>
                         </div>
                         <div class="player-info-details__item player-info-details__item--position">
-                            <h6 class="player-info-details__title">City</h6>
-                            <div class="player-info-details__value"><?php echo empty($user_details['city']) ? 'N/A' : $user_details['city']  ?></div>
+                            <h6 class="player-info-details__title">State</h6>
+                            <div class="player-info-details__value"><?php echo empty($user_details['state']) ? 'N/A' : $user_details['state']  ?></div>
                         </div>
                     </div>
 
@@ -152,7 +152,7 @@
                             <h4>Personal Information</h4>
                         </div>
                         <div class="card__content">
-                            <form action="#" method="post" class="df-personal-info">
+                            <form action="/profile/update/" method="post" class="df-personal-info" enctype="multipart/form-data">
                                 {{ csrf_field() }}
 
                                 <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
@@ -183,36 +183,56 @@
                                     </div>
                                     <div class="form-group__upload">
                                         <label class="btn btn-default btn-xs btn-file">
-                                            Upload Image... <input type="file" name="avatar_img" style="display: none;">
+                                            Upload Image... <input type="file" name="avatar_img" id="avatar_img" style="display: none;">
                                         </label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                             <label for="email">Email</label>
                                             <input type="email" class="form-control" value="{{Auth::user()->email}}" name="email" id="email" placeholder="Your email...">
+                                            @if ($errors->has('email'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                                             <label for="username">Username</label>
                                             <input type="text" class="form-control" value="{{Auth::user()->username}}" name="username" id="username" placeholder="Your username..">
+                                            @if ($errors->has('username'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('username') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                             <label for="password">Change Password</label>
                                             <input type="password" class="form-control" value="" name="password" id="password" placeholder="**********">
+                                            @if ($errors->has('password'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                             <label for="password_confirmation">Repeat Password</label>
                                             <input type="password" class="form-control" value="" name="password_confirmation" id="password_confirmation" placeholder="**********">
+                                            @if ($errors->has('password_confirmation'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -232,9 +252,14 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group form-group--sm">
+                                <div class="form-group{{ $errors->has('steamid') ? ' has-error' : '' }} form-group--sm">
                                     <label for="steamid">SteamID</label>
                                     <input type="text" class="form-control" value="{{Auth::user()->steamid}}" name="steamid" id="steamid">
+                                    @if ($errors->has('steamid'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('steamid') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
 
                                 <div class="form-group">
@@ -245,7 +270,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="city">State or City</label>
+                                            <label for="state">State or City</label>
                                             <select name="state" id="state" class="form-control"></select>
                                         </div>
                                     </div>
@@ -256,6 +281,9 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <input type="hidden" name="country-hidd" id="country-hidd" value="{{$user_details['country']}}"/>
+                                <input type="hidden" name="state-hidd" id="state-hidd" value="{{$user_details['state']}}"/>
 
                                 <div class="form-group--submit">
                                     <button type="submit" class="btn btn-default btn-lg btn-block">Update</button>
@@ -273,6 +301,29 @@
         populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
         populateCountries("country2");
         populateCountries("country2");
+    </script>
+
+    <script>
+        $(function() {
+            var country = document.getElementById('country-hidd');
+            if(country.value == ''){
+                country.value = -1;
+            }
+
+            var state = document.getElementById('state-hidd');
+            if(state.value == ''){
+                state.value = -1;
+            }
+
+            var element_c = document.getElementById('country');
+            var element_s = document.getElementById('state');
+
+            element_c.value = country.value;
+            if(state.value != -1){
+                document.getElementById('country').dispatchEvent(new Event('change'));
+            }
+            element_s.value = state.value;
+        });
     </script>
 
 @endsection

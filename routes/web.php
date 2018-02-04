@@ -32,7 +32,6 @@ Route::group( ['middleware' => ['auth', 'has_permission']], function() {
     Route::resource('/admin/permissions','PermissionController');
 });
 
-
 Route::get('/admin/401', function(){
     return view('admin.401');
 });

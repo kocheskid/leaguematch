@@ -9,7 +9,6 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use HasRoles;
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -38,5 +37,6 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($password);
     }
+
 
 }
