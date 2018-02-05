@@ -61,11 +61,11 @@
                                             <div class="col-sm-4">
                                                 <input data-provide="datepicker" data-date-autoclose="true" class="form-control" data-date-format="dd-mm-yyyy" id="publish_at" name="publish_at" required>
                                             </div>
+                                            <label class="switch-input">
+                                                <input type="checkbox" name="switch-checkbox">
+                                                <i data-swon-text="YES" data-swoff-text="NO"></i> Featured news
+                                            </label>
                                         </div>
-                                        <label class="switch-input">
-                                            <input type="checkbox" name="switch-checkbox">
-                                            <i data-swon-text="YES" data-swoff-text="NO"></i> Featured news
-                                        </label>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <div class="col-sm-offset-5 col-sm-4">
