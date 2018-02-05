@@ -38,13 +38,19 @@ class NewsController extends Controller
 
         $image = $request->file('news_big_image');
 
+        if($request['switch-checkbox'] == 'on'){
+            $featured = 1;
+        }else{
+            $featured = 0;
+        }
+
         $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
 
         $destinationPath = public_path('/news_images');
 
         $image->move($destinationPath, $input['imagename']);
 
-        $news_details = array('news_title' => $request['news_title'], 'news_content' => $request['news_content'], 'news_big_image' => $input['imagename'], 'news_author' => Auth::user()->id, 'news_views' => 0, 'publish_at' => date('Y-m-d H:i:s', strtotime($date_time)));
+        $news_details = array('news_title' => $request['news_title'], 'news_content' => $request['news_content'], 'news_big_image' => $input['imagename'], 'news_author' => Auth::user()->id, 'news_views' => 0, 'publish_at' => date('Y-m-d H:i:s', strtotime($date_time)), 'featured' => $featured);
 
         $new_news = News::create($news_details);
 
