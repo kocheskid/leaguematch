@@ -26,8 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $all_news = News::orderBy('publish_at', 'desc')->take(4)->get();
+        $all_news = News::where('publish_at', '<=', date('Y-m-d H:i:s'))->orderBy('publish_at', 'desc')->take(4)->get();
         $feat_news = News::where('featured', 1)->orderBy('publish_at', 'desc')->take(5)->get();
 
 

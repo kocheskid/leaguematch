@@ -52,4 +52,49 @@ class NewsController extends Controller
 
     }
 
+    public function edit($id){
+        $news_model = News::find(['id' => $id])->first();
+        return view('admin.news.update', compact('news_model'));
+    }
+
+    public function update(Request $request){
+
+        $news_editing = $request['edit_post'];
+
+        $date_time = $request['publish_at'];
+
+        $image = $request->file('news_big_image');
+
+        if($request['switch-checkbox'] == 'on'){
+            $featured = 1;
+        }else{
+            $featured = 0;
+        }
+
+        if(empty($image)){
+            $news_details = array('news_title' => $request['news_title'], 'news_content' => $request['news_content'], 'news_author' => Auth::user()->id, 'news_views' => 0, 'publish_at' => date('Y-m-d H:i:s', strtotime($date_time)), 'featured' => $featured);
+        }else{
+            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+
+            $destinationPath = public_path('/news_images');
+
+            $image->move($destinationPath, $input['imagename']);
+
+            $news_details = array('news_title' => $request['news_title'], 'news_content' => $request['news_content'], 'news_big_image' => $input['imagename'], 'news_author' => Auth::user()->id, 'news_views' => 0, 'publish_at' => date('Y-m-d H:i:s', strtotime($date_time)), 'featured' => $featured);
+        }
+
+        $new_news = News::find(['id' => $news_editing])->first();
+        $new_news->fill($news_details)->save();
+
+        return Redirect::to('/admin/news');
+
+    }
+
+    public function destroy($id){
+        $news_model = News::find(['id' => $id])->first();
+        $news_model->delete();
+
+        return Redirect::to('/admin/news');
+    }
+
 }

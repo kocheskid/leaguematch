@@ -25,11 +25,15 @@ Route::get('/admin/news', 'admin\NewsController@index');
 Route::get('/admin/news/create', 'admin\NewsController@create');
 Route::post('/admin/news/create', 'admin\NewsController@store');
 
+
 Route::group( ['middleware' => ['auth', 'has_permission']], function() {
     Route::get('/admin/admin', 'admin\AdminController@index');
     Route::resource('/admin/users', 'admin\UsersController');
     Route::resource('/admin/roles', 'RoleController');
     Route::resource('/admin/permissions','PermissionController');
+    Route::get('/admin/news/edit/{id}', 'admin\NewsController@edit');
+    Route::get('/admin/news/destroy/{id}', 'admin\NewsController@destroy');
+    Route::post('/admin/news/update', 'admin\NewsController@update');
 });
 
 Route::get('/admin/401', function(){

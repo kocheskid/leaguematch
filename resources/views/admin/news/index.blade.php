@@ -51,6 +51,7 @@
                             <th>Created</th>
                             <th>Published</th>
                             <th>Updated</th>
+                            <th>Featured</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -64,10 +65,11 @@
                                     <td>{{date('d M Y H:i', strtotime($nw->created_at))}}</td>
                                     <td>{{date('d M Y', strtotime($nw->publish_at))}}</td>
                                     <td>{{date('d M Y H:i', strtotime($nw->updated_at))}}</td>
+                                    <td>@if($nw->featured == 0) No @endif @if($nw->featured == 1) Yes @endif</td>
                                     <td>
                                         <span class="actions">
-                                            {{--<a href="{{ route('news.edit', $nw->id) }}"><i class="fa fa-pencil"></i></a>--}}
-                                            {{--<a href="{{ route('news.destroy', $nw->id) }}"><i class="fa fa-trash"></i></a>--}}
+                                            <a href="/admin/news/edit/{{$nw->id}}"><i class="fa fa-pencil"></i></a>
+                                            <a href="/admin/news/destroy/{{$nw->id}}"><i class="fa fa-trash"></i></a>
                                         </span>
                                     </td>
                                 </tr>
