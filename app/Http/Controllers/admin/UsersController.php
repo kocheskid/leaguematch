@@ -78,7 +78,13 @@ class UsersController extends Controller
 
         $ud_model = UserDetails::find(['user_id' => $id])->first();
 
-        $ud_model->fill($usr_det)->save();
+        if(count($ud_model) > 0){
+            $ud_model->fill($usr_det)->save();
+        }else{
+            UserDetails::create($usr_det);
+        }
+
+
 
         $input = $request->except('roles');
         $user->fill($input)->save();
