@@ -61,6 +61,7 @@
     <script src="{{asset('/admin/assets/vendor/justgage-toorshia/justgage.js')}}"></script>
     <script src="{{asset('/admin/assets/scripts/klorofilpro-common.js')}}"></script>
     <script src="{{asset('/admin/assets/vendor/summernote/summernote.min.js')}}"></script>
+    <script src="{{asset('/js/bootstrap-datetimepicker.js')}}"></script>
 
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('admin/assets/img/apple-icon.png')}}">
@@ -107,10 +108,28 @@
                     <a href="/admin/admin"><i class="ti-dashboard"></i> <span class="title">Dashboards</span></a>
                 </li>
                 <li class="panel">
+                    <a href="#subSlider" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-image"></i> <span class="title">Slider</span> <i class="icon-submenu ti-angle-left"></i></a>
+                    <div id="subSlider" class="collapse ">
+                        <ul class="submenu">
+                            <li><a href="/admin/slider">Edit Slider</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="panel">
                     <a href="#subNews" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-notepad"></i> <span class="title">News</span> <i class="icon-submenu ti-angle-left"></i></a>
                     <div id="subNews" class="collapse ">
                         <ul class="submenu">
                             <li><a href="/admin/news">Add News</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="panel">
+                    <a href="#subGManagement" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-cup"></i> <span class="title">Game Management</span> <i class="icon-submenu ti-angle-left"></i></a>
+                    <div id="subGManagement" class="collapse ">
+                        <ul class="submenu">
+                            <li><a href="/admin/teams">Teams</a></li>
+                            <li><a href="/admin/leagues">League System</a></li>
+                            <li><a href="/admin/cups">Cup System</a></li>
                         </ul>
                     </div>
                 </li>
@@ -153,6 +172,7 @@
 <script>
     $(function()
     {
+        $('.datetimepicker4').datetimepicker();
         // sales statistic chart
         var plot, sales, earnings;
         sales = [

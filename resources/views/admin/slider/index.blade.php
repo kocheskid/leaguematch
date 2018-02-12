@@ -1,18 +1,18 @@
 @extends('admin.layouts.app')
 
-@section('title','Admin - News')
+@section('title','Admin - Slider')
 
 @section('body')
 
     <div class="main-content">
         <div class="content-heading clearfix">
             <div class="heading-left">
-                <h1 class="page-title">News</h1>
-                <p class="page-subtitle">All News.</p>
+                <h1 class="page-title">Slider</h1>
+                <p class="page-subtitle">Edit Slider Content.</p>
             </div>
             <ul class="breadcrumb">
                 <li><a href="/admin/admin"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#" class="active">News</a></li>
+                <li><a href="#" class="active">Slider</a></li>
             </ul>
         </div>
         <div class="container-fluid">
@@ -20,24 +20,24 @@
             <!-- FEATURED DATATABLE -->
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Outplayed News</h3>
+                    <h3 class="panel-title">Home Page Slider</h3>
                 </div>
                 <div class="project-heading">
                     <div class="row">
                         <div class="col-md-9">
                             {{--<div class="media">--}}
-                                {{--<div class="media-left">--}}
-                                    {{--<img src="assets/img/project-logo.png" class="project-logo" alt="Project Logo">--}}
-                                {{--</div>--}}
-                                {{--<div class="media-body">--}}
-                                    {{--<h2 class="project-title">B2B eCommerce Project</h2>--}}
-                                    {{--<span class="label label-success status">RUNNING</span>--}}
-                                {{--</div>--}}
+                            {{--<div class="media-left">--}}
+                            {{--<img src="assets/img/project-logo.png" class="project-logo" alt="Project Logo">--}}
+                            {{--</div>--}}
+                            {{--<div class="media-body">--}}
+                            {{--<h2 class="project-title">B2B eCommerce Project</h2>--}}
+                            {{--<span class="label label-success status">RUNNING</span>--}}
+                            {{--</div>--}}
                             {{--</div>--}}
                         </div>
                         <div class="col-md-3 text-right">
                             <div class="btn-group">
-                                <a href="/admin/news/create" class="btn btn-primary">ADD NEW</a>
+                                <a href="/admin/slider/create" class="btn btn-primary">ADD NEW SLIDE</a>
                             </div>
                         </div>
                     </div>
@@ -47,31 +47,29 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>News Title</th>
-                            <th>Author</th>
-                            <th>Created</th>
-                            <th>Published</th>
-                            <th>Updated</th>
-                            <th>Featured</th>
+                            <th>Slide Title</th>
+                            <th>Slide Text</th>
+                            <th>Slide Image</th>
+                            <th>Slide Link</th>
+                            <th>Date Added</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @if(isset($news))
-                            @foreach($news as $key => $nw)
+                        @if(isset($slide_model))
+                            @foreach($slide_model as $key => $sm)
 
                                 <tr class="gradeX">
                                     <td>{{$key+1}}</td>
-                                    <td>{{$nw->news_title}}</td>
-                                    <td>{{$nw->news_author}}</td>
-                                    <td>{{date('d M Y H:i', strtotime($nw->created_at))}}</td>
-                                    <td>{{date('d M Y', strtotime($nw->publish_at))}}</td>
-                                    <td>{{date('d M Y H:i', strtotime($nw->updated_at))}}</td>
-                                    <td>@if($nw->featured == 0) No @endif @if($nw->featured == 1) Yes @endif</td>
+                                    <td>{{$sm->slide_title}}</td>
+                                    <td>{{$sm->slide_text}}</td>
+                                    <td><img src="{{asset('slider_images/')}}/{{$sm->slide_img}}" width="80"/></td>
+                                    <td>{{$sm->slide_link}}</td>
+                                    <td>{{date('d M Y H:i', strtotime($sm->created_at))}}</td>
                                     <td>
                                         <span class="actions">
-                                            <a href="/admin/news/edit/{{$nw->id}}"><i class="fa fa-pencil"></i></a>
-                                            <a href="/admin/news/destroy/{{$nw->id}}"><i class="fa fa-trash"></i></a>
+                                            <a href="/admin/slider/edit/{{$sm->id}}"><i class="fa fa-pencil"></i></a>
+                                            <a href="/admin/slider/destroy/{{$sm->id}}"><i class="fa fa-trash"></i></a>
                                         </span>
                                     </td>
                                 </tr>
@@ -155,7 +153,4 @@
         });
     </script>
 
-
 @endsection
-
-

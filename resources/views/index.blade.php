@@ -6,131 +6,105 @@
 
     <!-- Hero Unit
     ================================================== -->
-    <div class="hero-unit">
-        <div class="container hero-unit__container">
-            <div class="hero-unit__content hero-unit__content--left-center">
-          <span class="hero-unit__decor">
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-          </span>
-                <h5 class="hero-unit__subtitle">Elric Bros School</h5>
-                <h1 class="hero-unit__title">The <span class="text-primary">Alchemists</span></h1>
-                <div class="hero-unit__desc">Lorem ipsum dolor sit amet, consectetur adipisi nel elit, sed do eiusmod tempor incididunt ut labore et dolore .</div>
-                <a href="#" class="btn btn-inverse btn-sm btn-outline btn-icon-right btn-condensed hero-unit__btn" data-toggle="modal" data-target="#modal-login-register">Read More <i class="fa fa-plus text-primary"></i></a>
-            </div>
+    {{--<div class="hero-unit">--}}
+        {{--<div class="container hero-unit__container">--}}
+            {{--<div class="hero-unit__content hero-unit__content--left-center">--}}
+          {{--<span class="hero-unit__decor">--}}
+            {{--<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>--}}
+          {{--</span>--}}
+                {{--<h5 class="hero-unit__subtitle">Elric Bros School</h5>--}}
+                {{--<h1 class="hero-unit__title">The <span class="text-primary">Alchemists</span></h1>--}}
+                {{--<div class="hero-unit__desc">Lorem ipsum dolor sit amet, consectetur adipisi nel elit, sed do eiusmod tempor incididunt ut labore et dolore .</div>--}}
+                {{--<a href="#" class="btn btn-inverse btn-sm btn-outline btn-icon-right btn-condensed hero-unit__btn" data-toggle="modal" data-target="#modal-login-register">Read More <i class="fa fa-plus text-primary"></i></a>--}}
+            {{--</div>--}}
 
-            <figure class="hero-unit__img">
-                <img src="{{asset('images/samples/header_player.png')}}" alt="Hero Unit Image">
-            </figure>
-        </div>
-    </div>
-
-
-    <!-- Header Featured News
-    ================================================== -->
-    {{--<div class="posts posts--carousel-featured featured-carousel">--}}
-
-        {{--<div class="posts__item posts__item--category-1">--}}
-            {{--<a href="#" class="posts__link-wrapper">--}}
-                {{--<figure class="posts__thumb">--}}
-                    {{--<img src="{{asset('images/samples/featured-carousel-2.jpg')}}" alt="">--}}
-                {{--</figure>--}}
-                {{--<div class="posts__inner">--}}
-                    {{--<div class="posts__cat">--}}
-                        {{--<span class="label posts__cat-label">The Team</span>--}}
-                    {{--</div>--}}
-                    {{--<h3 class="posts__title">Alchemists women team tryouts will start in January</h3>--}}
-                    {{--<time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>--}}
-                    {{--<ul class="post__meta meta">--}}
-                        {{--<li class="meta__item meta__item--views">2369</li>--}}
-                        {{--<li class="meta__item meta__item--likes"><i class="meta-like icon-heart"></i> 530</li>--}}
-                        {{--<li class="meta__item meta__item--comments">18</li>--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</a>--}}
+            {{--<figure class="hero-unit__img">--}}
+                {{--<img src="{{asset('images/samples/header_player.png')}}" alt="Hero Unit Image">--}}
+            {{--</figure>--}}
         {{--</div>--}}
-
-        {{--<div class="posts__item posts__item--category-1">--}}
-            {{--<a href="#" class="posts__link-wrapper">--}}
-                {{--<figure class="posts__thumb">--}}
-                    {{--<img src="{{asset('images/samples/featured-carousel-3.jpg')}}" alt="">--}}
-                {{--</figure>--}}
-                {{--<div class="posts__inner">--}}
-                    {{--<div class="posts__cat">--}}
-                        {{--<span class="label posts__cat-label">The Team</span>--}}
-                    {{--</div>--}}
-                    {{--<h3 class="posts__title">Checkout the new ride of our best player of the season</h3>--}}
-                    {{--<time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>--}}
-                    {{--<ul class="post__meta meta">--}}
-                        {{--<li class="meta__item meta__item--views">2369</li>--}}
-                        {{--<li class="meta__item meta__item--likes"><i class="meta-like icon-heart"></i> 530</li>--}}
-                        {{--<li class="meta__item meta__item--comments">18</li>--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</a>--}}
-        {{--</div>--}}
-
-        {{--<div class="posts__item posts__item--category-1">--}}
-            {{--<a href="#" class="posts__link-wrapper">--}}
-                {{--<figure class="posts__thumb">--}}
-                    {{--<img src="{{asset('images/samples/featured-carousel-1.jpg')}}" alt="">--}}
-                {{--</figure>--}}
-                {{--<div class="posts__inner">--}}
-                    {{--<div class="posts__cat">--}}
-                        {{--<span class="label posts__cat-label">The Team</span>--}}
-                    {{--</div>--}}
-                    {{--<h3 class="posts__title">All the players are taking a team trip this summer</h3>--}}
-                    {{--<time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>--}}
-                    {{--<ul class="post__meta meta">--}}
-                        {{--<li class="meta__item meta__item--views">2369</li>--}}
-                        {{--<li class="meta__item meta__item--likes"><i class="meta-like icon-heart"></i> 530</li>--}}
-                        {{--<li class="meta__item meta__item--comments">18</li>--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</a>--}}
-        {{--</div>--}}
-
-        {{--<div class="posts__item posts__item--category-1">--}}
-            {{--<a href="#" class="posts__link-wrapper">--}}
-                {{--<figure class="posts__thumb">--}}
-                    {{--<img src="{{asset('images/samples/featured-carousel-2.jpg')}}" alt="">--}}
-                {{--</figure>--}}
-                {{--<div class="posts__inner">--}}
-                    {{--<div class="posts__cat">--}}
-                        {{--<span class="label posts__cat-label">The Team</span>--}}
-                    {{--</div>--}}
-                    {{--<h3 class="posts__title">Alchemists women team tryouts will start in January</h3>--}}
-                    {{--<time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>--}}
-                    {{--<ul class="post__meta meta">--}}
-                        {{--<li class="meta__item meta__item--views">2369</li>--}}
-                        {{--<li class="meta__item meta__item--likes"><i class="meta-like icon-heart"></i> 530</li>--}}
-                        {{--<li class="meta__item meta__item--comments">18</li>--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</a>--}}
-        {{--</div>--}}
-
-        {{--<div class="posts__item posts__item--category-1">--}}
-            {{--<a href="#" class="posts__link-wrapper">--}}
-                {{--<figure class="posts__thumb">--}}
-                    {{--<img src="{{asset('images/samples/featured-carousel-1.jpg')}}" alt="">--}}
-                {{--</figure>--}}
-                {{--<div class="posts__inner">--}}
-                    {{--<div class="posts__cat">--}}
-                        {{--<span class="label posts__cat-label">The Team</span>--}}
-                    {{--</div>--}}
-                    {{--<h3 class="posts__title">All the players are taking a team trip this summer</h3>--}}
-                    {{--<time datetime="2017-08-23" class="posts__date">August 23rd, 2017</time>--}}
-                    {{--<ul class="post__meta meta">--}}
-                        {{--<li class="meta__item meta__item--views">2369</li>--}}
-                        {{--<li class="meta__item meta__item--likes"><i class="meta-like icon-heart"></i> 530</li>--}}
-                        {{--<li class="meta__item meta__item--comments">18</li>--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</a>--}}
-        {{--</div>--}}
-
     {{--</div>--}}
 
+    <!---  Home Page Slider   --->
+
+    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example" data-slide-to="1"></li>
+            <li data-target="#carousel-example" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            @if(isset($slide_model))
+
+                @foreach($slide_model as $key => $sm)
+
+                    <?php $i = 0; ?>
+                    <div class="item <?php if($i == 0) echo 'active'; $i++; ?>">
+                        <a href="{{$sm->slide_link}}"><img src="{{asset('slider_images/')}}/{{$sm->slide_img}}" style="max-height: 700px;width:100%;" /></a>
+                        <div class="hero-unit__content hero-unit__content--left-center">
+                      <span class="hero-unit__decor">
+                      </span>
+                            <h1 class="hero-unit__title"><span class="text-primary">{{$sm->slide_title}}</span></h1>
+                            <div class="hero-unit__desc" style="color:white!important;font-weight:600;">{{$sm->slide_text}}</div>
+                            <a href="{{$sm->slide_link}}" class="btn btn-inverse btn-sm btn-outline btn-icon-right btn-condensed hero-unit__btn" data-target="#modal-login-register">Read More <i class="fa fa-plus text-primary"></i></a>
+                        </div>
+                    </div>
+
+                @endforeach
+
+            @endif
+
+            @if(count($slide_model) == 0)
+
+                    <div class="item active">
+                        <a href="#"><img src="{{asset('slider_images/no-thumbnail.jpg')}}" style="max-height: 700px;width:100%;" /></a>
+                        <div class="hero-unit__content hero-unit__content--left-center">
+                      <span class="hero-unit__decor">
+                      </span>
+                            <h1 class="hero-unit__title"><span class="text-primary">No Image</span></h1>
+                            <div class="hero-unit__desc">Upload your first slider.</div>
+                            <a href="#" class="btn btn-inverse btn-sm btn-outline btn-icon-right btn-condensed hero-unit__btn" data-target="#modal-login-register">Read More <i class="fa fa-plus text-primary"></i></a>
+                        </div>
+                    </div>
+
+             @endif
+            {{--<div class="item active">--}}
+                {{--<a href="#"><img src="http://placekitten.com/1600/600" /></a>--}}
+                    {{--<div class="hero-unit__content hero-unit__content--left-center">--}}
+                      {{--<span class="hero-unit__decor">--}}
+                        {{--<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>--}}
+                      {{--</span>--}}
+                        {{--<h5 class="hero-unit__subtitle">Elric Bros School</h5>--}}
+                        {{--<h1 class="hero-unit__title">The <span class="text-primary">Alchemists</span></h1>--}}
+                        {{--<div class="hero-unit__desc">Lorem ipsum dolor sit amet, consectetur adipisi nel elit, sed do eiusmod tempor incididunt ut labore et dolore .</div>--}}
+                        {{--<a href="#" class="btn btn-inverse btn-sm btn-outline btn-icon-right btn-condensed hero-unit__btn" data-toggle="modal" data-target="#modal-login-register">Read More <i class="fa fa-plus text-primary"></i></a>--}}
+                    {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="item">--}}
+                {{--<a href="#"><img src="http://placekitten.com/1600/600" /></a>--}}
+                {{--<div class="carousel-caption">--}}
+                    {{--<h3>Meow</h3>--}}
+                    {{--<p>Just Kitten Around</p>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="item">--}}
+                {{--<a href="#"><img src="http://placekitten.com/1600/600" /></a>--}}
+                {{--<div class="carousel-caption">--}}
+                    {{--<h3>Meow</h3>--}}
+                    {{--<p>Just Kitten Around</p>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        </div>
+
+        <a class="left carousel-control" href="#carousel-example" style="width:4%" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example" style="width:4%" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+    <!-- END Slider -->
 
     <!-- Content
     ================================================== -->

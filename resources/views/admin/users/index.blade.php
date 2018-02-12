@@ -26,6 +26,7 @@
                     <table id="featured-datatable" class="table table-striped table-hover">
                         <thead>
                         <tr>
+                            <th>#</th>
                             <th>SteamID</th>
                             <th>Username</th>
                             <th>Email</th>
@@ -36,9 +37,10 @@
                         </thead>
                         <tbody>
                         @if(isset($users))
-                            @foreach($users as $user)
+                            @foreach($users as $key => $user)
 
                                 <tr class="gradeX">
+                                    <td>{{$key+1}}</td>
                                     <td>@if($user->steamid != '')
                                             {{$user->steamid}}
                                         @else

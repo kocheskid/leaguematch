@@ -24,7 +24,7 @@
                             <h3 class="panel-title">Edit User</h3>
                         </div>
                         <div class="panel-body">
-                            {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }}
+                            {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT', 'class' => 'form-horizontal')) }}
                                 <fieldset>
                                     <legend>General Information</legend>
                                     <div class="form-group">

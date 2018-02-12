@@ -1,18 +1,18 @@
 @extends('admin.layouts.app')
 
-@section('title','Admin - News')
+@section('title','Admin - Teams')
 
 @section('body')
 
     <div class="main-content">
         <div class="content-heading clearfix">
             <div class="heading-left">
-                <h1 class="page-title">News</h1>
-                <p class="page-subtitle">All News.</p>
+                <h1 class="page-title">Teams</h1>
+                <p class="page-subtitle">All Teams</p>
             </div>
             <ul class="breadcrumb">
                 <li><a href="/admin/admin"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#" class="active">News</a></li>
+                <li><a href="#" class="active">Teams</a></li>
             </ul>
         </div>
         <div class="container-fluid">
@@ -20,24 +20,24 @@
             <!-- FEATURED DATATABLE -->
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Outplayed News</h3>
+                    <h3 class="panel-title">Teams Management</h3>
                 </div>
                 <div class="project-heading">
                     <div class="row">
                         <div class="col-md-9">
                             {{--<div class="media">--}}
-                                {{--<div class="media-left">--}}
-                                    {{--<img src="assets/img/project-logo.png" class="project-logo" alt="Project Logo">--}}
-                                {{--</div>--}}
-                                {{--<div class="media-body">--}}
-                                    {{--<h2 class="project-title">B2B eCommerce Project</h2>--}}
-                                    {{--<span class="label label-success status">RUNNING</span>--}}
-                                {{--</div>--}}
+                            {{--<div class="media-left">--}}
+                            {{--<img src="assets/img/project-logo.png" class="project-logo" alt="Project Logo">--}}
+                            {{--</div>--}}
+                            {{--<div class="media-body">--}}
+                            {{--<h2 class="project-title">B2B eCommerce Project</h2>--}}
+                            {{--<span class="label label-success status">RUNNING</span>--}}
+                            {{--</div>--}}
                             {{--</div>--}}
                         </div>
                         <div class="col-md-3 text-right">
                             <div class="btn-group">
-                                <a href="/admin/news/create" class="btn btn-primary">ADD NEW</a>
+                                {{--<a href="/admin/teams/create" class="btn btn-primary">ADD NEW TEAM</a>--}}
                             </div>
                         </div>
                     </div>
@@ -47,31 +47,27 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>News Title</th>
-                            <th>Author</th>
-                            <th>Created</th>
-                            <th>Published</th>
-                            <th>Updated</th>
-                            <th>Featured</th>
+                            <th>Team Name</th>
+                            <th>Team Logo</th>
+                            <th>Team Description</th>
+                            <th>Date Created</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @if(isset($news))
-                            @foreach($news as $key => $nw)
+                        @if(isset($all_teams))
+                            @foreach($all_teams as $key => $at)
 
                                 <tr class="gradeX">
                                     <td>{{$key+1}}</td>
-                                    <td>{{$nw->news_title}}</td>
-                                    <td>{{$nw->news_author}}</td>
-                                    <td>{{date('d M Y H:i', strtotime($nw->created_at))}}</td>
-                                    <td>{{date('d M Y', strtotime($nw->publish_at))}}</td>
-                                    <td>{{date('d M Y H:i', strtotime($nw->updated_at))}}</td>
-                                    <td>@if($nw->featured == 0) No @endif @if($nw->featured == 1) Yes @endif</td>
+                                    <td>{{$at->team_name}}</td>
+                                    <td><img src="{{asset('team_logos/')}}/{{$at->team_logo}}" width="80"/></td>
+                                    <td>{{$at->team_description}}</td>
+                                    <td>{{date('d M Y H:i', strtotime($at->created_at))}}</td>
                                     <td>
                                         <span class="actions">
-                                            <a href="/admin/news/edit/{{$nw->id}}"><i class="fa fa-pencil"></i></a>
-                                            <a href="/admin/news/destroy/{{$nw->id}}"><i class="fa fa-trash"></i></a>
+                                            <a href="/admin/teams/edit/{{$at->id}}"><i class="fa fa-pencil"></i></a>
+                                            <a href="/admin/teams/destroy/{{$at->id}}"><i class="fa fa-trash"></i></a>
                                         </span>
                                     </td>
                                 </tr>
@@ -155,7 +151,4 @@
         });
     </script>
 
-
 @endsection
-
-
