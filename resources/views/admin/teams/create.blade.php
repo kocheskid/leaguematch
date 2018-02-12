@@ -53,11 +53,18 @@
                                     <label for="team_logo" class="col-sm-3 control-label">Team Members</label>
                                     <div class="col-sm-9">
                                         <ul>
-                                            @foreach($team_members as $tm)
+                                            @if(!empty($team_members))
+                                                @foreach($team_members as $tm)
 
-                                                <li><a href="{{ route('users.edit', $tm->id) }}">{{$tm->username}}</a></li>
+                                                    <li><a href="{{ route('users.edit', $tm->id) }}">{{$tm->username}}</a></li>
 
-                                            @endforeach
+                                                @endforeach
+
+                                                @else
+
+                                                    <li>No members</li>
+
+                                            @endif
                                         </ul>
                                     </div>
                                 </div>
