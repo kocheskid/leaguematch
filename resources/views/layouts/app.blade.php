@@ -57,7 +57,7 @@
     <!-- Header Mobile -->
     <div class="header-mobile clearfix" id="header-mobile">
         <div class="header-mobile__logo">
-            <a href="index.html"><img src="{{asset('images/logo.png')}}" alt="outplayed" class="header-mobile__logo-img"></a>
+            <a href="index.html"><img src="{{asset('images/logo-outplayed.png')}}" alt="outplayed" class="header-mobile__logo-img"></a>
         </div>
         <div class="header-mobile__inner">
             <a id="header-mobile__toggle" class="burger-menu-icon"><span class="burger-menu-icon__line"></span></a>
@@ -89,8 +89,8 @@
                     <li class="nav-account__item"><a href="#">Language: <span class="highlight">EN</span></a>
                         <ul class="main-nav__sub">
                             <li><a href="#">English</a></li>
-                            <li><a href="#">Spanish</a></li>
-                            <li><a href="#">French</a></li>
+                            {{--<li><a href="#">Spanish</a></li>--}}
+                            {{--<li><a href="#">French</a></li>--}}
                             <li><a href="#">German</a></li>
                         </ul>
                     </li>
@@ -243,7 +243,7 @@
                                     {{--<li class=""><a href="index-3.html">Home - version 3</a></li>--}}
                                 {{--</ul>--}}
                             </li>
-                            <li class=""><a href="#">Features</a>
+                            <li class=""><a href="/news">News</a>
                                 {{--<div class="main-nav__megamenu clearfix">--}}
                                     {{--<ul class="col-lg-2 col-md-3 col-xs-12 main-nav__ul">--}}
                                         {{--<li class="main-nav__title">Features</li>--}}
@@ -341,7 +341,7 @@
                                     {{--</div>--}}
                                 {{--</div>--}}
                             </li>
-                            <li class=""><a href="#">The Team</a>
+                            <li class=""><a href="#">League</a>
                                 {{--<ul class="main-nav__sub">--}}
                                     {{--<li><a href="team-overview.html">Overview</a></li>--}}
                                     {{--<li><a href="team-roster-2.html">Roster</a>--}}
@@ -370,7 +370,7 @@
                                     {{--<li><a href="staff-single.html">Staff Member</a></li>--}}
                                 {{--</ul>--}}
                             </li>
-                            <li class=""><a href="{{asset('news/')}}">News</a>
+                            <li class=""><a href="#">Cups</a>
                                 {{--<ul class="main-nav__sub">--}}
                                     {{--<li><a href="blog-1.html">News - version 1</a></li>--}}
                                     {{--<li><a href="blog-2.html">News - version 2</a></li>--}}
@@ -385,7 +385,7 @@
                                     {{--</li>--}}
                                 {{--</ul>--}}
                             </li>
-                            <li class=""><a href="#">Shop</a>
+                            <li class=""><a href="#">Media</a>
                                 {{--<ul class="main-nav__sub">--}}
                                     {{--<li><a href="shop-grid.html">Shop - Grid</a></li>--}}
                                     {{--<li><a href="shop-list.html">Shop - List</a></li>--}}
@@ -398,6 +398,7 @@
                                     {{--<li><a href="shop-account.html">Account</a></li>--}}
                                 {{--</ul>--}}
                             </li>
+                            <li class=""><a href="#">Forum</a></li>
                         </ul>
 
                         <!-- Header Search Form -->
@@ -637,7 +638,7 @@
 
                                     <!-- Footer Logo -->
                                     <div class="footer-logo">
-                                        <a href="index.html"><img src="{{asset('images/logo-outplayed.png')}}" alt="outplayed" class="footer-logo__img"></a>
+                                        <a href="/"><img src="{{asset('images/logo-outplayed.png')}}" alt="outplayed" class="footer-logo__img"></a>
                                     </div>
                                     <!-- Footer Logo / End -->
 
@@ -690,7 +691,7 @@
                                 <div class="footer-col-inner">
                                     <!-- Widget: Popular Posts / End -->
                                     <div class="widget widget--footer widget-popular-posts">
-                                        <h4 class="widget__title">Popular News</h4>
+                                        <h4 class="widget__title">Last News</h4>
                                         <div class="widget__content">
                                             <ul class="posts posts--simple-list">
                                                 <li class="posts__item posts__item--category-2">
@@ -749,12 +750,12 @@
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <ul class="footer-nav">
-                                    <li class="footer-nav__item"><a href="#">Home</a></li>
-                                    <li class="footer-nav__item"><a href="#">Features</a></li>
-                                    <li class="footer-nav__item"><a href="#">Statistics</a></li>
-                                    <li class="footer-nav__item"><a href="#">The Team</a></li>
-                                    <li class="footer-nav__item"><a href="#">News</a></li>
-                                    <li class="footer-nav__item"><a href="#">Shop</a></li>
+                                    <li class="footer-nav__item"><a href="/">Home</a></li>
+                                    <li class="footer-nav__item"><a href="/news">News</a></li>
+                                    <li class="footer-nav__item"><a href="#">League</a></li>
+                                    <li class="footer-nav__item"><a href="#">Cups</a></li>
+                                    <li class="footer-nav__item"><a href="#">Media</a></li>
+                                    <li class="footer-nav__item"><a href="#">Forum</a></li>
                                 </ul>
                             </div>
                         </div>

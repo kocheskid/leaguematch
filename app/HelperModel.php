@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class HelperModel extends Model
 {
@@ -12,4 +13,11 @@ class HelperModel extends Model
             'Premium' => 'Premium'
         ];
     }
+
+    public static function getLoggedUserSelect(){
+        return [
+            Auth::user()->id => Auth::user()->username
+        ];
+    }
+
 }

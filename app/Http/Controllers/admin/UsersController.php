@@ -74,7 +74,7 @@ class UsersController extends Controller
             $lock = 0;
         }
 
-        $usr_det = array('user_id' => $id, 'first_name' => $request['first_name'], 'last_name' => $request['last_name'], 'age' => $request['age'], 'nationality' => $request['nationality'], 'lock' => $lock);
+        $usr_det = array('user_id' => $id, 'first_name' => $request['first_name'], 'last_name' => $request['last_name'], 'age' => $request['age'], 'nationality' => $request['nationality']);
 
         $ud_model = UserDetails::find(['user_id' => $id])->first();
 
@@ -87,6 +87,7 @@ class UsersController extends Controller
 
 
         $input = $request->except('roles');
+        $input['lock'] = $lock;
         $user->fill($input)->save();
         if ($request->roles <> '') {
             $user->roles()->sync($request->roles);

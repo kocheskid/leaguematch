@@ -129,11 +129,11 @@
                             <nav class="df-account-navigation">
                                 <ul>
                                     <li class="df-account-navigation__link">
-                                        <a href="#">Personal Information</a>
+                                        <a href="/profile">Personal Information</a>
                                     </li>
-                                    {{--<li class="df-account-navigation__link">--}}
-                                        {{--<a href="#">Billing Information</a>--}}
-                                    {{--</li>--}}
+                                    <li class="df-account-navigation__link">
+                                        <a href="/profile/team">Team Information</a>
+                                    </li>
                                     {{--<li class="df-account-navigation__link">--}}
                                         {{--<a href="#">Shipping Information</a>--}}
                                     {{--</li>--}}

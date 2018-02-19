@@ -77,9 +77,20 @@
                                     <div class="form-group">
                                         <div class="col-md-6 col-md-offset-3">
                                             <label class="switch-input">
-                                                <input type="checkbox" name="switch-checkbox">
-                                                <i data-swon-text="YES" data-swoff-text="NO"></i> Account Locked
+                                                @if($user->lock == 1)
+                                                    <input type="checkbox" name="switch-checkbox" checked>
+                                                    <i data-swon-text="YES" data-swoff-text="NO"></i> Account Locked
+                                                @else
+                                                    <input type="checkbox" name="switch-checkbox">
+                                                    <i data-swon-text="YES" data-swoff-text="NO"></i> Account Locked
+                                                @endif
                                             </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lock_description" class="col-sm-3 control-label">Lock Description</label>
+                                        <div class="col-sm-9">
+                                            {{ Form::textarea('lock_description', $user->lock_description, array('class' => 'form-control', 'id' => 'lock_description')) }}
                                         </div>
                                     </div>
                                     <br/>

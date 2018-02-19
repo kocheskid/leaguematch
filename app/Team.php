@@ -10,7 +10,7 @@ class Team extends Model
     public $isUpdate;
 
     protected $fillable = [
-        'team_name', 'team_logo', 'join_password', 'team_description'
+        'captain_user_id', 'team_name', 'team_logo', 'join_password', 'team_description'
     ];
 
 }

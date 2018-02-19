@@ -20,11 +20,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/admin/admin/login', 'admin\LoginController@index');
 Route::post('/admin/admin/login', 'admin\LoginController@login');
 
-//ADMIN NEWS
-Route::get('/admin/news', 'admin\NewsController@index');
-Route::get('/admin/news/create', 'admin\NewsController@create');
-Route::post('/admin/news/create', 'admin\NewsController@store');
-
 
 Route::group( ['middleware' => ['auth', 'has_permission']], function() {
     Route::get('/admin/admin', 'admin\AdminController@index');
@@ -34,6 +29,11 @@ Route::group( ['middleware' => ['auth', 'has_permission']], function() {
     Route::get('/admin/news/edit/{id}', 'admin\NewsController@edit');
     Route::get('/admin/news/destroy/{id}', 'admin\NewsController@destroy');
     Route::post('/admin/news/update', 'admin\NewsController@update');
+
+    //ADMIN NEWS
+    Route::get('/admin/news', 'admin\NewsController@index');
+    Route::get('/admin/news/create', 'admin\NewsController@create');
+    Route::post('/admin/news/create', 'admin\NewsController@store');
 
     Route::get('/admin/slider', 'admin\SliderController@index')->name('/admin/slider');
     Route::get('/admin/slider/create', 'admin\SliderController@create');
@@ -93,4 +93,11 @@ Route::get('/news/{id}', 'NewsController@post');
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/profile/', 'ProfileController@index');
     Route::post('/profile/update/', 'ProfileController@update');
+
+    Route::get('/profile/team', 'TeamController@index');
+    Route::get('/profile/team/create', 'TeamController@create');
+    Route::post('/profile/team/create', 'TeamController@create')->name('teams.create');
+    Route::get('/profile/team/edit/{id}', 'TeamController@edit');
+    Route::post('/profile/team/update/{id}', 'TeamController@update')->name('teams.update');
+    Route::get('/profile/team/destroy/{id}', 'TeamController@destroy');
 });

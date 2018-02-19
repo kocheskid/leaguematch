@@ -31,6 +31,8 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Locked</th>
+                            <th>Lock Description</th>
                             <th>Created</th>
                             <th>Action</th>
                         </tr>
@@ -49,6 +51,8 @@
                                     <td>{{$user->username}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->roles()->pluck('name')->implode(' ')}}</td>
+                                    <td>{{$user->lock == 1 ? 'Yes' : 'NO'}}</td>
+                                    <td>{{$user->lock_description}}</td>
                                     <td>{{date('d M Y H:i', strtotime($user->created_at))}}</td>
                                     <td>
                                         <span class="actions">

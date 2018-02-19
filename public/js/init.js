@@ -1425,7 +1425,7 @@
 
         $social_counters.SocialCounter({
           // Facebook
-          facebook_user: 'danfisher.dev',
+          facebook_user: 'outplayedonline',
   				facebook_token: '275780749525027|Ja92xbF1Zf5UNwGqNohAfBJjEaY',
 
           // Google+
