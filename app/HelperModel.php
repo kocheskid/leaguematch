@@ -20,4 +20,14 @@ class HelperModel extends Model
         ];
     }
 
+    public static function getTeamCaptain($id){
+
+        $team_captain = User::find(['id' => $id])->select('id','username')->first();
+
+        return [
+          $team_captain->id => $team_captain->username
+        ];
+
+    }
+
 }

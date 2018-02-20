@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Team Update')
+@section('title','Team Create')
 
 @section('body')
 
